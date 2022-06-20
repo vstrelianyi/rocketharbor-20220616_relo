@@ -1,0 +1,19 @@
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #898989;
+  padding: 23px 60px 23px 0;
+
+  img{
+    width: 97px;
+  }
+  ul{
+    display: flex;
+    li{
+      a{
+        padding: 0 25px;
+      }
+    }
+  }
+}

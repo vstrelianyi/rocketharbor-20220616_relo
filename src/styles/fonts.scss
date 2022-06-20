@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Freight Sans Book';
+  src: local('Freight Sans Book'), local('Freight-Sans-Book'),
+      url('../assets/fonts/FreightSans-Book/FreightSans-Book.woff2') format('woff2'),
+      url('../assets/fonts/FreightSans-Book/FreightSans-Book.woff') format('woff'),
+      url('../assets/fonts/FreightSans-Book/FreightSans-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Freight Sans Black';
+  src: local('Freight Sans Black'), local('Freight-Sans-Black'),
+      url('../assets/fonts/FreightSans-Black/FreightSans-Black.woff2') format('woff2'),
+      url('../assets/fonts/FreightSans-Black/FreightSans-Black.woff') format('woff'),
+      url('../assets/fonts/FreightSans-Black/FreightSans-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+body{
+	font-size: 16px;
+	font-family: 'Freight Sans Book', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Freight Sans Black', sans-serif;
+}
+
+h1{
+	font-size: 60px;
+}
+h2{
+}
+h3{
+}
+
+// desktop
+@media( min-width: 992px){
+	body{
+		font-size: 20px;
+	}
+	h1{
+		font-size: 101px;
+	}
+	h2{
+	}
+	h3{
+	}
+	.section-title{
+	}
+}

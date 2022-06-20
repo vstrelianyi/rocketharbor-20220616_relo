@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Freight Sans';
+    src: local('Freight Sans Book'), local('Freight-Sans-Book'),
+        url('FreightSans-Book.woff2') format('woff2'),
+        url('FreightSans-Book.woff') format('woff'),
+        url('FreightSans-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

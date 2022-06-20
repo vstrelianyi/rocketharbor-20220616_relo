@@ -1,0 +1,23 @@
+.container{
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	padding: 0 20px;
+	// overflow: hidden;
+
+	@media( min-width: 576px){
+		width: 540px;
+	}
+	@media( min-width: 768px){
+		width: 720px;
+	}
+	@media( min-width: 992px){
+		width: 960px;
+	}
+	@media( min-width: 1200px){
+		width: 1140px;
+	}
+	@media( min-width: 1450px){
+		width: 1435px;
+	}
+}
