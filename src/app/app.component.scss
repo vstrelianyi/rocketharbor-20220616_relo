@@ -22,8 +22,10 @@ section{
       }
       @media ( min-width: 1200px ){
         flex-wrap: nowrap;
+        overflow: visible;
         >.col{
           flex: 0 0 50%;
+          overflow: visible;
         }
       }
     }
