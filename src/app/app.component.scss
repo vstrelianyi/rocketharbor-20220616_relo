@@ -22,10 +22,10 @@ section{
       }
       @media ( min-width: 1200px ){
         flex-wrap: nowrap;
-        overflow: visible;
+        // overflow: visible;
         >.col{
           flex: 0 0 50%;
-          overflow: visible;
+          // overflow: visible;
         }
       }
     }
@@ -60,14 +60,14 @@ section{
       text-transform: uppercase;
       font-family: 'FreightSansProBlack', sans-serif;
       line-height: 0.7;
-      font-size: 70px;
+      font-size: 50px;
       white-space: normal;
 
       @media ( min-width: 768px ){
-        font-size: 80px;
+        font-size: 70px;
       }
-      @media ( min-width: 768px ){
-        font-size: 101px;
+      @media ( min-width: 1200px ){
+        font-size: 80px;
       }
     }
   }
@@ -126,6 +126,17 @@ section.hero-1{
 
 
   // elements
+  .section-title{
+    strong{
+      font-size: 50px;
+      @media ( min-width: 768px ){
+        font-size: 70px;
+      }
+      @media ( min-width: 1200px ){
+        font-size: 101px;
+      }
+    }
+  }
 
   // -- text
   p{
