@@ -21,6 +21,7 @@
         justify-content: center;
         a{
           padding: 0 20px;
+          text-align: center;
         }
       }
 
@@ -67,36 +68,45 @@
       }
     }
 
+    // menu links
     ul{
       display: flex;
       text-transform: uppercase;
       flex: 1 0 100%;
       justify-content: center;
-      @media ( min-width: 1200px ){
-        flex: 0 0 auto;
-      }
+      flex-wrap: wrap;
       li{
+        flex: 1 0 100%;
         a{
           padding: 0 10px;
           position: relative;
           letter-spacing: 2px;
         }
-        &:not(:last-child){
-          a:before{
-            position: absolute;
-            content: '';
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: $main;
+      }
+      @media ( min-width: 540px ){
+        flex-wrap: nowrap;
+        li{
+          flex: 0 0 auto;
+          &:not(:last-child){
+            a:before{
+              position: absolute;
+              content: '';
+              right: 0;
+              top: 0;
+              height: 100%;
+              width: 2px;
+              background-color: $main;
+            }
+          }
+          &:last-child{
+            a{
+              padding-right: 0;
+            }
           }
         }
-        &:last-child{
-          a{
-            padding-right: 0;
-          }
-        }
+      }
+      @media ( min-width: 1200px ){
+        flex: 0 0 auto;
       }
     }
   }

@@ -2,7 +2,7 @@
   <a class="link-logo" href="/">
     <img src="./assets/images/logo.jpg" alt="logo">
   </a>
-  <ul>
+  <ul class="menu" [class.is-open]="isMenuOpen">
     <li><a href="/">Smart Search Map</a></li>
     <li><a href="/">Why Chicagoland</a></li>
     <li><a href="/">About Illinois Real Estate</a></li>
@@ -10,5 +10,5 @@
     <li><a href="/">Contact Us</a></li>
   </ul>
 
-  <app-burger></app-burger>
+  <app-burger (click)="toggleMenu()" [isActive]="isMenuOpen"></app-burger>
 </nav>

@@ -2,69 +2,62 @@ $burger_color_default: #000;
 $burger_color_active: #000;
 $burger_transition_time: 0.3s;
 
-.burger-wrapper{
-	display: inline-flex;
-	align-self: center;
-	flex-direction: column;
+button{
+  display: flex;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  transition: $burger_transition_time transform, $burger_transition_time background-color;
+  z-index: 1;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border: none;
 
-	@media ( min-width: 1200px ){
-		display: none;
-	}
+  @media ( min-width: 1200px ){
+    display: none;
+  }
 
-  button{
-    display: flex;
-    position: relative;
-    height: 30px;
+  span{
+    position: absolute;
+    background-color: $burger_color_default;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: block;
+    height: 4px;
     width: 30px;
-    background-color: transparent;
-    transition: $burger_transition_time transform, $burger_transition_time background-color;
-    z-index: 1;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    border: none;
+    transition: all $burger_transition_time ease;
+    pointer-events: none;
 
-    span{
-      position: absolute;
-      background-color: $burger_color_default;
-      left: 50%;
-      transform: translate(-50%, 0);
-      display: block;
-      height: 4px;
-      width: 30px;
-      transition: all $burger_transition_time ease;
-      pointer-events: none;
-
-      &:nth-of-type(1){
-        top: 3px;
-      }
-      &:nth-of-type(2){
-        top: 15px;
-      }
-      &:nth-of-type(3){
-        top: 27px;
-      }
+    &:nth-of-type(1){
+      top: 3px;
     }
-
-    &.active{
-      span{
-        &:nth-of-type(1){
-          transform: rotatez(45deg);
-          transform-origin: 0%;
-          left: 5px;
-        }
-        &:nth-of-type(2){
-          opacity: 0;
-        }
-        &:nth-of-type(3){
-          transform: rotatez(-45deg);
-          transform-origin: 0%;
-          top: 25px;
-          left: 5px;
-        }
-      }
+    &:nth-of-type(2){
+      top: 15px;
+    }
+    &:nth-of-type(3){
+      top: 27px;
     }
   }
 
+  &.active{
+    span{
+      &:nth-of-type(1){
+        transform: rotatez(45deg);
+        transform-origin: 0%;
+        left: 5px;
+      }
+      &:nth-of-type(2){
+        opacity: 0;
+      }
+      &:nth-of-type(3){
+        transform: rotatez(-45deg);
+        transform-origin: 0%;
+        top: 25px;
+        left: 5px;
+      }
+    }
+  }
 }
