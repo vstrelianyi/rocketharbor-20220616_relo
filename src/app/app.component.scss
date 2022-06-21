@@ -6,6 +6,7 @@ footer{
 
 // COMMON
 section{
+  overflow: hidden;
   //layout
   display: flex;
   >.container{
@@ -308,7 +309,7 @@ section.hero-7{
   background-color: #FFE000;
   @media ( min-width: 1200px ){
     padding: 100px 0px;
-    background-color: none;
+    background-color: transparent;
     background-image: url('../assets/images/sections/hero-6.jpg');
   }
 
