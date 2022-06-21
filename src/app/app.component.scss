@@ -160,16 +160,27 @@ section.hero-5{
 
 section.hero-6{
   background-color: #F7F7F7;
-  background-image: url('../assets/images/sections/hero-6.jpg');
   background-position: left bottom;
-  height: auto;
+
   padding: 100px 0 135px;
 
-  // layout
-  >.container{
-    flex-wrap: wrap;
 
-    >.row:nth-child(2){
+  // elements
+  iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+section.hero-7{
+  background-image: url('../assets/images/sections/hero-6.jpg');
+  height: auto;
+  padding: 100px 0;
+
+   // layout
+   >.container{
+    >.row{
       flex-wrap: wrap;
       background-color: #FFE000;
       margin-left: -100px;
@@ -196,14 +207,7 @@ section.hero-6{
       a.button{
         margin-left: 100px;
       }
-
     }
-  }
-
-  // elements
-  iframe{
-    width: 100%;
-    aspect-ratio: 16 / 9;
   }
 
 }
