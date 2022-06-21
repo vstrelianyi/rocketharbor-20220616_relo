@@ -39,7 +39,7 @@ section{
       font-size: 101px;
       text-transform: uppercase;
       font-family: 'FreightSansProBlack', sans-serif;
-      line-height: 1;
+      line-height: 0.7;
     }
   }
 
@@ -51,15 +51,29 @@ section{
 
 section.hero{
   background-size: cover;
-  height: 650px;
+  padding: 50px 0;
 }
 
 section.hero-1{
   background-image: url('../assets/images/sections/hero-1.jpg');
   background-position: left center;
+
+  // layout
+  >.container{
+    flex-wrap: wrap;
+    >.row:nth-child(1){
+      .col{
+        flex: 1 0 100%;
+      }
+    }
+  }
+
+
+  // elements
   p{
     font-size: 26px;
     line-height: 1.2;
+    padding-left: 100px;
   }
 }
 
@@ -67,7 +81,7 @@ section.hero-2{
   background-color: $main;
   background-image: url('../assets/images/sections/hero-2-upd.png');
   background-position: left bottom;
-  padding-top: 50px;
+  padding-bottom: 300px;
   // layout
   .row{
     height: 100%;
@@ -88,23 +102,25 @@ section.hero-2{
 section.hero-3{
   background-image: url('../assets/images/sections/hero-3.jpg');
 
-   //layout
-   >.container{
-     >.row{
+  //layout
+  >.container{
+    >.row{
       >.col:nth-child(1){
         flex: 0 0 40%;
       }
-       >.col:nth-child(2){
-         flex: 0 0 60%;
-         p{
-          margin-left: 100px;
-         }
-         a.button{
-          margin-left: 100px;
-         }
-       }
-     }
-   }
+      >.col:nth-child(2){
+        flex: 0 0 60%;
+        p{
+        margin-left: 100px;
+        }
+        a.button{
+        margin-left: 100px;
+        }
+      }
+    }
+  }
+  // elements
+
 }
 
 section.hero-4{
@@ -130,13 +146,13 @@ section.hero-4{
 
 section.hero-5{
   background-color: #FFE000;
-
+  padding: 0;
   // layout
   >.container{
     >.row{
       height: 100%;
-      >.col{
-
+      >.col:nth-child(2){
+        padding: 50px 0;
       }
       >.col:nth-child(1){
         background-image: url('../assets/images/sections/hero-5.png');
@@ -156,26 +172,42 @@ section.hero-5{
       color: #f3c404;
     }
   }
+  p{
+    padding-left: 100px;
+  }
+  a.button{
+    margin-left: 100px;
+  }
 }
 
 section.hero-6{
   background-color: #F7F7F7;
   background-position: left bottom;
+  padding: 50px 0px 0px;
 
-  padding: 100px 0 135px;
-
+  // layout
+  >.container{
+    >.row{
+      >.col:nth-child(2){
+        padding-top: 30px;
+        padding-left: 50px;
+      }
+    }
+  }
 
   // elements
   iframe{
     width: 100%;
     aspect-ratio: 16 / 9;
   }
+  p{
+    padding-left: 100px;
+  }
 
 }
 
 section.hero-7{
   background-image: url('../assets/images/sections/hero-6.jpg');
-  height: auto;
   padding: 100px 0;
 
    // layout
@@ -194,6 +226,7 @@ section.hero-7{
 
       .col-full{
         flex: 1 0 100%;
+        padding-bottom: 50px;
       }
 
       .section-title{
