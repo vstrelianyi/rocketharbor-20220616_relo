@@ -1,8 +1,7 @@
-button, a.button {
+button.button, a.button {
   border-radius: 18px;
   box-shadow: -0.9px 0.5px 3px 0 rgba(0, 0, 0, 0.15);
   background-image: linear-gradient( #FFE867, #FFDF08);
-  padding: 10px 40px;
   border: none;
   font-size: 14px;
   text-transform: uppercase;
@@ -11,5 +10,14 @@ button, a.button {
   font-family: 'FreightSansProSemibold', sans-serif;
   &:hover{
     box-shadow: -0.9px 0.5px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  margin-bottom: 5px;
+  padding: 15px 50px;
+  @media ( min-width: 768px ){
+    padding: 15px 70px;
+  }
+  @media ( min-width: 1200px ){
+    padding: 10px 40px;
   }
 }
