@@ -19,6 +19,21 @@ nav{
     }
   }
 
+  //common
+  ul.menu{
+    font-size: 18px;
+    li{
+      a{
+        padding: 0 25px;
+        transition: 0.3s color;
+        white-space: nowrap;
+        &:hover{
+          color: $main;
+        }
+      }
+    }
+  }
+
   //mobile
   ul.menu{
     transform: translateX( -200% );
@@ -30,7 +45,7 @@ nav{
     left: 0;
     z-index: 1;
     background-color: #F5F5F5;
-    width: 60%;
+    width: 80%;
     height: 100%;
     align-content: center;
     &.is-open{
@@ -43,15 +58,8 @@ nav{
 
   // desktop
   ul.menu{
-    li{
-      a{
-        padding: 0 25px;
-        transition: 0.3s color;
-        white-space: nowrap;
-        &:hover{
-          color: $main;
-        }
-      }
+    @media ( min-width: 540px ){
+      font-size: inherit;
     }
     @media ( min-width: 1200px ){
       position: static;
