@@ -5,55 +5,6 @@
 @import './styles/container';
 @import './styles/row';
 
-footer{
-  background-color: #000000;
-}
+// elements
+@import './styles/button';
 
-section{
-  //layout
-  display: flex;
-  >.container{
-    display: flex;
-    align-items: center;
-    >.row{
-      >.col{
-        flex: 0 0 50%;
-      }
-    }
-  }
-
-  //elements
-  .section-title{
-    display: flex;
-    flex-direction: column;
-
-    span{
-      font-family: 'Freight Sans Book', sans-serif;
-      font-weight: normal;
-      padding-left: 100px;
-      line-height: 1;
-      font-size: 37px;
-      b{
-        font-weight: 700;
-      }
-    }
-
-    strong{
-      color: $main;
-      font-size: 101px;
-      text-transform: uppercase;
-      font-family: 'Freight Sans Black', sans-serif;
-      line-height: 1;
-    }
-  }
-  p{
-    font-size: 26px;
-    padding-left: 100px;
-  }
-}
-
-section.section-1{
-  background-image: url('./assets/images/sections/hero1.jpg');
-  background-size: cover;
-  height: 722px;
-}

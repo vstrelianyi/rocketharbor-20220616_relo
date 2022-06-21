@@ -1,0 +1,15 @@
+button, a.button {
+  border-radius: 18px;
+  box-shadow: -0.9px 0.5px 3px 0 rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient( #FFE867, #FFDF08);
+  padding: 15px 40px;
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.42px;
+  transition: 0.3s box-shadow;
+  font-family: 'FreightSansProSemibold', sans-serif;
+  &:hover{
+    box-shadow: -0.9px 0.5px 3px 0 rgba(0, 0, 0, 0.5);
+  }
+}

@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## ------------------------
 ## FONTS source
 https://fontsloader.com/types/freight-sans
+https://xfonts.pro/font-family/freight-sans-pro
