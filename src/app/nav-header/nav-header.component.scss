@@ -1,5 +1,15 @@
 @import '../../styles/vars.scss';
 
+.nav-header{
+  background-color: #F5F5F5;
+  width: 100%;
+  @media ( min-width: 1200px ){
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+}
+
 nav{
   display: flex;
   align-items: center;

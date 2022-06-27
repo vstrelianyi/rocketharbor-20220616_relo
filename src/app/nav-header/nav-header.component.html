@@ -1,14 +1,18 @@
-<nav class="nav-header">
-  <a class="link-logo" href="/">
-    <img src="./assets/images/logo.jpg" alt="logo">
-  </a>
-  <ul class="menu" [class.is-open]="isMenuOpen">
-    <li><a href="/">Smart Search Map</a></li>
-    <li><a href="/">Why Chicagoland</a></li>
-    <li><a href="/">About Illinois Real Estate</a></li>
-    <li><a href="/">Why Baird & Warner</a></li>
-    <li><a href="/">Contact Us</a></li>
-  </ul>
+<div class="nav-header">
+  <div class="container">
+    <nav>
+      <a class="link-logo" href="/">
+        <img src="./assets/images/logo.jpg" alt="logo">
+      </a>
+      <ul class="menu" [class.is-open]="isMenuOpen">
+        <li><a href="/">Smart Search Map</a></li>
+        <li><a href="/">Why Chicagoland</a></li>
+        <li><a href="/">About Illinois Real Estate</a></li>
+        <li><a href="/">Why Baird & Warner</a></li>
+        <li><a href="/">Contact Us</a></li>
+      </ul>
 
-  <app-burger (click)="toggleMenu()" [isActive]="isMenuOpen"></app-burger>
-</nav>
+      <app-burger (click)="toggleMenu()" [isActive]="isMenuOpen"></app-burger>
+    </nav>
+  </div>
+</div>
