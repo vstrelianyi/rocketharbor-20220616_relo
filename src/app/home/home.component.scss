@@ -3,7 +3,7 @@
 // HERO 1
 section.hero-1{
   @media ( min-width: 768px ){
-    background-image: url('../../assets/images/sections/hero-1.jpg');
+    background-image: url('../../assets/images/home/hero-1.jpg');
     background-position: left center;
   }
 
@@ -46,7 +46,7 @@ section.hero-1{
 // HERO 2
 section.hero-2{
   background-color: $main;
-  background-image: url('../../assets/images/sections/hero-2-upd.png');
+  background-image: url('../../assets/images/home/hero-2-upd.png');
   background-position: left bottom;
   padding-bottom: 300px;
   // layout
@@ -72,7 +72,7 @@ section.hero-2{
 // HERO 3
 section.hero-3{
   @media ( min-width: 1200px ){
-    background-image: url('../../assets/images/sections/hero-3.jpg');
+    background-image: url('../../assets/images/home/hero-3.jpg');
   }
 
   //layout
@@ -96,7 +96,7 @@ section.hero-3{
 
 // HERO 4
 section.hero-4{
-  background-image: url('../../assets/images/sections/hero-4.jpg');
+  background-image: url('../../assets/images/home/hero-4.jpg');
 
   // elements
   .section-title{
@@ -123,7 +123,7 @@ section.hero-5{
       height: 100%;
       >.col:nth-child(1){
         order: 1;
-        background-image: url('../../assets/images/sections/hero-5.png');
+        background-image: url('../../assets/images/home/hero-5.png');
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -163,7 +163,7 @@ section.hero-6{
   background-position: left bottom;
 
   padding: 50px 0px 50px;
-  background-image: url('../../assets/images/sections/hero-6-mob.jpg');
+  background-image: url('../../assets/images/home/hero-6-mob.jpg');
   @media ( min-width: 1200px ){
     padding: 50px 0px 0px;
     background-image: none;
@@ -204,7 +204,7 @@ section.hero-7{
   @media ( min-width: 1200px ){
     padding: 100px 0px;
     background-color: transparent;
-    background-image: url('../../assets/images/sections/hero-6.jpg');
+    background-image: url('../../assets/images/home/hero-6.jpg');
   }
 
    // layout
@@ -220,7 +220,7 @@ section.hero-7{
         margin-left: -100px;
         margin-right: -100px;
         padding: 45px 100px;
-        background-image: url('../../assets/images/sections/hero-6-2.png');
+        background-image: url('../../assets/images/home/hero-6-2.png');
       }
 
       .col-full{
@@ -228,7 +228,7 @@ section.hero-7{
         padding-bottom: 50px;
       }
       .col:nth-child(3){
-        background-image: url('../../assets/images/sections/hero-6-2.png');
+        background-image: url('../../assets/images/home/hero-6-2.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center bottom;
