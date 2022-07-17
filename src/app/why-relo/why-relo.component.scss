@@ -1,107 +1,24 @@
-@import '../../styles/vars';
-
 section.hero-1{
   background-color: #FFDF00;
-  background-image: url('../../assets/images/why-relo/hero-1.png');
-  background-position: right top;
-  background-size: auto 120%;
+  background-image: url('../../assets/images/why-relo/hero-1.jpg');
+  background-position: left bottom;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 150px;
 
-  // layout
-  >.container{
-    >.row{
-      >.col{
-        flex: 0 0 100%;
-      }
-    }
-  }
-
-  // elements
-  h2{
-    strong{
-      font-size: 120px;
-      color: #F4C700;
-      &:last-of-type{
-        margin-bottom: 40px;
-      }
-    }
-    span{
-      line-height: 1.2;
-    }
-  }
 }
 
 section.hero-2{
-  background-image: url('../../assets/images/why-relo/hero-2.jpg');
-  background-position: left top;
-  background-size: contain;
-}
-
-section.hero-3{
   background-color: #FFDF00;
-  background-image: url('../../assets/images/why-relo/hero-3.png');
-  background-position: right top;
+  background-image: url('../../assets/images/why-relo/hero-2.png');
+  background-position: left bottom;
   background-size: contain;
 
   // elements
   h2{
     strong{
-      font-size: 120px;
-      color: #F4C700;
-    }
-    span{
-      line-height: 1.2;
+      color: #F4C500;
     }
   }
 }
 
-section.hero-4{
-  background-color: #FFDF00;
-  background-image: url('../../assets/images/why-relo/hero-4.jpg');
-  background-position: right top;
-  background-size: cover;
-
-  // elements
-  p{
-    color: $white;
-  }
-}
-
-section.hero-5{
-  background-color: #FFDF00;
-  background-image: url('../../assets/images/why-relo/hero-5.png');
-  background-position: right top;
-  background-size: contain;
-
-  // layout
-  >.container{
-    >.row{
-      >.col{
-        overflow: visible;
-      }
-    }
-  }
-
-  // elements
-  h2{
-    strong{
-      font-size: 120px;
-      color: #F4C700;
-    }
-  }
-}
-
-section.hero-6{
-  background-image: url('../../assets/images/why-relo/hero-6.jpg');
-  background-position: left top;
-  background-size: contain;
-
-  // layout
-  >.container{
-    >.row{
-      >.col{
-        overflow: visible;
-      }
-    }
-  }
-
-}
