@@ -33,12 +33,30 @@ nav{
   ul.menu{
     font-size: 18px;
     li{
+      padding: 0 25px;
       a{
-        padding: 0 25px;
         transition: 0.3s color;
         white-space: nowrap;
+        position: relative;
         &:hover{
           color: $main;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $main;
+          display: none;
+        }
+        &.link-active{
+          font-weight: 700;
+          color: $black;
+          &::before{
+            display: block;
+          }
         }
       }
     }

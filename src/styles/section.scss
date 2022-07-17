@@ -1,0 +1,104 @@
+@import './vars';
+
+section{
+  overflow: hidden;
+  //layout
+  display: flex;
+  >.container{
+    display: flex;
+    align-items: center;
+    >.row{
+      flex-wrap: wrap;
+      overflow: hidden;
+      >.col{
+        flex: 0 1 100%;
+        overflow: hidden;
+      }
+      @media ( min-width: 768px ){
+      }
+      @media ( min-width: 1200px ){
+        flex-wrap: nowrap;
+        // overflow: visible;
+        >.col{
+          flex: 0 0 50%;
+          // overflow: visible;
+        }
+      }
+    }
+  }
+
+  &.hero{
+    background-size: cover;
+    padding: 50px 0;
+  }
+
+  //elements
+  .section-title{
+    display: flex;
+    flex-direction: column;
+
+    span{
+      font-family: 'FreightSansProBook', sans-serif;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      font-size: 37px;
+
+      padding-left: 20px;
+      @media ( min-width: 768px ){
+        padding-left: 50px;
+      }
+      @media ( min-width: 1200px ){
+        padding-left: 100px;
+      }
+      b{
+        font-weight: 700;
+      }
+    }
+
+    strong{
+      color: $main;
+      text-transform: uppercase;
+      font-family: 'FreightSansProBlack', sans-serif;
+      line-height: 0.7;
+      font-size: 50px;
+      white-space: normal;
+
+      @media ( min-width: 768px ){
+        font-size: 70px;
+      }
+      @media ( min-width: 1200px ){
+        font-size: 80px;
+      }
+    }
+  }
+
+  // --text
+  p{
+    font-size: 30px;
+    line-height: 1.2;
+
+    padding-left: 0px;
+    @media ( min-width: 768px ){
+      padding-left: 50px;
+    }
+    @media ( min-width: 1200px ){
+      font-size: 21px;
+      padding-left: 100px;
+    }
+  }
+
+  // --button
+  button.button, a.button{
+    align-self: center;
+
+    margin-left: 20px;
+    @media ( min-width: 768px ){
+      margin-left: 50px;
+    }
+    @media ( min-width: 1200px ){
+      align-self: flex-start;
+      margin-left: 100px;
+    }
+  }
+}

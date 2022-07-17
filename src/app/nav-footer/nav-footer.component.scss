@@ -3,7 +3,7 @@
 .nav-footer{
   display: flex;
   flex-direction: column;
-  color: #fff;
+  color: $white;
   padding-bottom: 50px;
   @media ( min-width: 1200px ){
     padding-bottom: 100px;
@@ -22,6 +22,10 @@
         a{
           padding: 0 20px;
           text-align: center;
+          transition: 0.3s color;
+          &:hover{
+            color: $main;
+          }
         }
       }
 
