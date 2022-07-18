@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 section.hero-1{
   background-color: #FFDF00;
   background-image: url('../../assets/images/why-relo/hero-1.jpg');
@@ -12,7 +14,27 @@ section.hero-2{
   background-color: #FFDF00;
   background-image: url('../../assets/images/why-relo/hero-2.png');
   background-position: left bottom;
-  background-size: contain;
+  background-size: 50% auto;
+
+  // layout
+  .row{
+    .col:nth-child(2){
+      padding-bottom: 100px;
+    }
+    @media( min-width: 576px){
+      .col:nth-child(2){
+        padding-bottom: 300px;
+      }
+    }
+    @media( min-width: 1200px){
+      .col:nth-child(1){
+        padding-bottom: 500px;
+      }
+      .col:nth-child(2){
+        padding-bottom: 0;
+      }
+    }
+  }
 
   // elements
   h2{
@@ -26,10 +48,89 @@ section.hero-3{
   background-image: url('../../assets/images/why-relo/hero-3.jpg');
   background-position: left bottom;
   background-size: contain;
+
+   // layout
+   .row{
+
+    .col:nth-child(2){
+      padding-bottom: 100px;
+    }
+    @media( min-width: 576px){
+      .col:nth-child(2){
+        padding-bottom: 200px;
+      }
+    }
+    @media( min-width: 768px){
+      .col:nth-child(2){
+        padding-bottom: 400px;
+      }
+    }
+    @media( min-width: 1200px){
+      .col:nth-child(2){
+        padding-bottom: 0;
+      }
+    }
+  }
 }
 
 section.hero-4{
   background-image: url('../../assets/images/why-relo/hero-4.jpg');
   background-position: left bottom;
+  background-size: cover;
+
+  // layout
+  .row{
+    .col:nth-child(2){
+      padding-left: 60px;
+    }
+  }
+
+  //elements
+  .section-title{
+    span{
+      color: $white;
+    }
+  }
+  iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+section.hero-5{
+  padding-bottom: 200px;
+  background-color: #FFDF00;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    background-color: $white;
+    top: 0;
+    left: 0;
+  }
+  .bg{
+    background-image: url('../../assets/images/why-relo/hero-5.png');
+    background-position: left bottom;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  //elements
+  .section-title{
+    strong{
+      color: #F4C500;
+    }
+  }
+}
+
+section.hero-6{
+  background-image: url('../../assets/images/why-relo/hero-6.jpg');
+  background-position: right top;
   background-size: cover;
 }

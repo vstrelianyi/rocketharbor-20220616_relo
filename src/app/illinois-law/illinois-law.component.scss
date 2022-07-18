@@ -18,8 +18,14 @@ section.hero-1{
   // elements
   h2{
     strong{
-      font-size: 120px;
       color: #F4C700;
+      font-size: 50px;
+      @media ( min-width: 768px ){
+        font-size: 70px;
+      }
+      @media ( min-width: 1200px ){
+        font-size: 120px;
+      }
       &:last-of-type{
         margin-bottom: 40px;
       }
@@ -33,21 +39,59 @@ section.hero-1{
 section.hero-2{
   background-image: url('../../assets/images/illinois-law/hero-2.jpg');
   background-position: left top;
-  background-size: contain;
+  background-size: cover;
+  @media( min-width: 992px){
+    background-size: contain;
+	}
 }
 
 section.hero-3{
   background-color: #FFDF00;
-  background-image: url('../../assets/images/illinois-law/hero-3.png');
-  background-position: right top;
-  background-size: contain;
+  padding: 0;
+  // layout
+  >.container{
+    >.row{
+      overflow: visible;
+      >.col{
+        background-repeat: no-repeat;
+        padding: 50px 0;
+      }
+      >.col:nth-child(1){
+        flex: 0 1 100%;
+        @media ( min-width: 1200px ){
+          flex: 0 1 70%;
+        }
+      }
+      >.col:nth-child(2){
+        flex: 0 1 100%;
+        height: 300px;
+        overflow: visible;
+        position: relative;
+        @media ( min-width: 1200px ){
+          flex: 0 1 30%;
+          height: auto;
+        }
+        .bg{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 50vw;
+          height: 100%;
+          background-image: url('../../assets/images/illinois-law/hero-3.png');
+          background-repeat: no-repeat;
+          background-position: left bottom;
+          background-size: auto 100%;
+        }
+      }
+    }
+  }
 
   // elements
   h2{
     strong{
-      font-size: 120px;
       color: #F4C700;
     }
+
     span{
       line-height: 1.2;
     }
@@ -69,8 +113,22 @@ section.hero-4{
 section.hero-5{
   background-color: #FFDF00;
   background-image: url('../../assets/images/illinois-law/hero-5.png');
-  background-position: right top;
+  background-position: right bottom;
   background-size: contain;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    background-color: $white;
+    top: 0;
+    left: 0;
+  }
+
+  @media ( min-width: 1200px ){
+    background-size: 50% auto;
+  }
 
   // layout
   >.container{
@@ -78,13 +136,18 @@ section.hero-5{
       >.col{
         overflow: visible;
       }
+      >.col:nth-child(2){
+        height: 400px;
+        @media ( min-width: 1200px ){
+          height: auto;
+        }
+      }
     }
   }
 
   // elements
   h2{
     strong{
-      font-size: 120px;
       color: #F4C700;
     }
   }
@@ -92,14 +155,17 @@ section.hero-5{
 
 section.hero-6{
   background-image: url('../../assets/images/illinois-law/hero-6.jpg');
-  background-position: left top;
-  background-size: contain;
+  background-position: left bottom;
+  background-size: auto 100%;
 
   // layout
   >.container{
     >.row{
-      >.col{
-        overflow: visible;
+      >.col:nth-child(1){
+        flex: 0 1 30%;
+      }
+      >.col:nth-child(2){
+        flex: 1 1 70%;
       }
     }
   }

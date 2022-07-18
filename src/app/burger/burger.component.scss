@@ -1,5 +1,7 @@
+@import '../../styles/vars';
+
 $burger_color_default: #000;
-$burger_color_active: #000;
+$burger_color_active: $main;
 $burger_transition_time: 0.3s;
 
 button{
@@ -26,7 +28,7 @@ button{
     left: 50%;
     transform: translate(-50%, 0);
     display: block;
-    height: 4px;
+    height: 6px;
     width: 30px;
     transition: all $burger_transition_time ease;
     pointer-events: none;
@@ -44,6 +46,7 @@ button{
 
   &.active{
     span{
+      background-color: $burger_color_active;
       &:nth-of-type(1){
         transform: rotatez(45deg);
         transform-origin: 0%;
