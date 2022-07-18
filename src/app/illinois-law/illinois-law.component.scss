@@ -161,11 +161,13 @@ section.hero-6{
   // layout
   >.container{
     >.row{
-      >.col:nth-child(1){
-        flex: 0 1 30%;
-      }
-      >.col:nth-child(2){
-        flex: 1 1 70%;
+      @media( min-width: 1200px){
+        >.col:nth-child(1){
+          flex: 0 1 30%;
+        }
+        >.col:nth-child(2){
+          flex: 1 1 70%;
+        }
       }
     }
   }

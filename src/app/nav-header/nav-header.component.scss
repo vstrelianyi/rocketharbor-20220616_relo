@@ -33,7 +33,6 @@ nav{
   ul.menu{
     li{
       display: flex;
-      padding: 0 25px;
       a:not(.button){
         transition: 0.3s color;
         white-space: nowrap;
@@ -83,6 +82,7 @@ nav{
     li{
       flex: 1 0 100%;
       justify-content: center;
+
       a:not(.button){
         padding: 10px 0;
         &.link-active{
@@ -122,6 +122,7 @@ nav{
       color: #898989;
       li{
         flex: 1 0 auto;
+        padding: 0 25px;
 
         a:not(.button){
           padding: 0;

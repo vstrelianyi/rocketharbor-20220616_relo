@@ -9,6 +9,7 @@ import { WhyReloComponent } from './why-relo/why-relo.component';
 import { IllinoisLawComponent } from './illinois-law/illinois-law.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { StickyHelpComponent } from './sticky-help/sticky-help.component';
 
 @NgModule( {
   imports: [ BrowserModule, AppRoutingModule ],
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     WhyReloComponent,
     IllinoisLawComponent,
     HomeComponent,
+    StickyHelpComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
