@@ -3,4 +3,7 @@
 footer{
   background-color: $black;
   padding-bottom: 202px;
+  @media ( min-width: 1200px ){
+    padding-bottom: 0;
+  }
 }

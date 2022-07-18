@@ -37,12 +37,11 @@ section.hero-1{
 }
 
 section.hero-2{
-  background-image: url('../../assets/images/illinois-law/hero-2.jpg');
   background-position: left top;
   background-size: cover;
-  @media( min-width: 992px){
-    background-size: contain;
-	}
+  @media ( min-width: 1200px ){
+    background-image: url('../../assets/images/illinois-law/hero-2.jpg');
+  }
 }
 
 section.hero-3{
@@ -154,9 +153,11 @@ section.hero-5{
 }
 
 section.hero-6{
-  background-image: url('../../assets/images/illinois-law/hero-6.jpg');
   background-position: left bottom;
   background-size: auto 100%;
+  @media ( min-width: 1200px ){
+    background-image: url('../../assets/images/illinois-law/hero-6.jpg');
+  }
 
   // layout
   >.container{
