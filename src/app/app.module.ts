@@ -10,6 +10,7 @@ import { IllinoisLawComponent } from './illinois-law/illinois-law.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StickyHelpComponent } from './sticky-help/sticky-help.component';
+import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.component';
 
 @NgModule( {
   imports: [ BrowserModule, AppRoutingModule ],
@@ -22,6 +23,7 @@ import { StickyHelpComponent } from './sticky-help/sticky-help.component';
     IllinoisLawComponent,
     HomeComponent,
     StickyHelpComponent,
+    SmartSearchMapComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

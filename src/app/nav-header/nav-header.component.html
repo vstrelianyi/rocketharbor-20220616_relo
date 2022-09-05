@@ -7,13 +7,22 @@
       </a>
 
       <ul class="menu" [class.is-open]="isMenuOpen">
-        <li><a href="/">Smart Search Map</a></li>
+        <li><a routerLink="/smart-search-map" routerLinkActive="link-active">Smart Search Map</a></li>
         <li><a href="/">Why Chicagoland</a></li>
         <li><a routerLink="/illinois-law" routerLinkActive="link-active">About Illinois Real Estate</a></li>
         <li><a routerLink="/why-relo" routerLinkActive="link-active">Why Baird & Warner</a></li>
-        <li><a href="/">Contact Us</a></li>
-        <li class="tel"><a href="tel:321.456.1855"><img src="./assets/images/nav-header/phone.png"/>321.456.1855</a></li>
-        <li class="cta"><a class="button" href="/">Connect with agent</a></li>
+        <!-- <li><a href="/">Contact Us</a></li> -->
+        <li><a href="/"><img src="./assets/images/nav-header/abbvie.png"/></a></li>
+        <li class="cta">
+          <a class="tel" href="tel:321.456.1855">
+            <!-- <img src="./assets/images/nav-header/phone-black.png"/> -->
+            <svg class="icon" viewBox="0 0 48 48" width="25" height="25">
+              <path d="M13.25 21.59c2.88 5.66 7.51 10.29 13.18 13.17l4.4-4.41c.55-.55 1.34-.71 2.03-.49 2.24.74 4.65 1.14 7.14 1.14 1.11 0 2 .89 2 2v7c0 1.11-.89 2-2 2-18.78 0-34-15.22-34-34 0-1.11.9-2 2-2h7c1.11 0 2 .89 2 2 0 2.49.4 4.9 1.14 7.14.22.69.06 1.48-.49 2.03l-4.4 4.42z"/>
+            </svg>
+            <span>321.456.1855</span>
+          </a>
+          <a class="button connect-agent" href="/">Connect with agent</a>
+        </li>
       </ul>
 
       <app-burger (click)="toggleMenu()" [isActive]="isMenuOpen"></app-burger>

@@ -1,0 +1,29 @@
+@import '../../styles/vars';
+
+section.hero{
+  background-color: $main;
+
+  // layout
+  .row{
+    .col{
+
+    }
+  }
+
+  .section-title{
+    strong{
+      color: #f3c404;
+    }
+  }
+}
+
+section.hero-2{
+  background-color: #101010;
+  padding: 50px 0;
+  background-image: url('../../assets/images/search-map/bg.png');
+  background-size: cover;
+
+  p{
+    color: $white;
+  }
+}
