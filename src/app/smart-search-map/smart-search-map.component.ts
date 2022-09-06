@@ -12,4 +12,20 @@ export class SmartSearchMapComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedRegion: number = 0;
+  regions= [
+    { id: 1, region: 'Chicago' },
+    { id: 2, region: 'NY' },
+    { id: 3, region: 'Washington' },
+    { id: 4, region: 'Seattle ' },
+  ];
+
+  selectedNeighborhood: number = 0;
+  neighborhoods= [
+    { id: 1, neighborhood: '1' },
+    { id: 2, neighborhood: '2' },
+    { id: 3, neighborhood: '3' },
+    { id: 4, neighborhood: '4' },
+  ];
+
 }

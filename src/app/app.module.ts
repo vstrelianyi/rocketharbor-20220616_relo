@@ -11,9 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StickyHelpComponent } from './sticky-help/sticky-help.component';
 import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule( {
-  imports: [ BrowserModule, AppRoutingModule ],
+  imports: [ BrowserModule, AppRoutingModule, NgSelectModule,FormsModule ],
   declarations: [
     AppComponent,
     NavHeaderComponent,

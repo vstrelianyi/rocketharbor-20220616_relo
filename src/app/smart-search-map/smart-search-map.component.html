@@ -29,6 +29,36 @@
 </section>
 
 <section class="map">
+  <div class="container">
+
+    <div class="map-filters">
+      <div class="input-control">
+        <label for="region">Neighborhood Region:</label>
+        <ng-select
+          class="ng-select-custom"
+          [items]="regions"
+          bindLabel="region"
+          bindValue="id"
+          [(ngModel)]="selectedRegion"
+        >
+        </ng-select>
+      </div>
+
+      <div class="input-control">
+        <label for="region">Neighborhood:</label>
+        <ng-select
+          class="ng-select-custom"
+          [items]="neighborhoods"
+          bindLabel="neighborhood"
+          bindValue="id"
+          [(ngModel)]="selectedNeighborhood"
+        >
+        </ng-select>
+      </div>
+    </div>
+
+  </div>
+
   <img src="./assets/images/search-map/map.png"/>
 </section>
 

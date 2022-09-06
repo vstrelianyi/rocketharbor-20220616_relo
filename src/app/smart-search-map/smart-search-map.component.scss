@@ -1,3 +1,4 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @import '../../styles/vars';
 
 section.hero{
@@ -17,6 +18,43 @@ section.hero{
   }
 }
 
+section.map{
+  flex-direction: column;
+}
+
+.map-filters{
+  display: flex;
+  column-gap: 20px;
+  padding: 15px 0;
+}
+.input-control{
+  display: flex;
+  align-items: center;
+  label{
+    margin-right: 20px;
+    font-weight: 700;
+  }
+}
+.ng-select-custom{
+  min-width: 200px;
+}
+.ng-select-custom ::ng-deep{
+  .ng-dropdown-panel-items{
+    background-color: $white;
+    padding: 10px;
+    .ng-option-label{
+      &:hover{
+        color: $main;
+      }
+    }
+  }
+  .ng-input{
+    input{
+      border: 1px solid $black !important;
+    }
+  }
+}
+
 section.hero-2{
   background-color: #101010;
   padding: 50px 0;
@@ -27,3 +65,4 @@ section.hero-2{
     color: $white;
   }
 }
+
