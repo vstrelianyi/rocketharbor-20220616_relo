@@ -23,7 +23,7 @@ nav{
   .link-logo{
     display: flex;
     align-items: center;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     margin-bottom: -50px;
     img{
       width: 97px;
@@ -95,6 +95,24 @@ nav{
         font-size: 14px;
       }
 
+    }
+
+    li.link-abbvie{
+      display: none;
+      @media ( min-width: 1200px ){
+        display: flex;
+      }
+    }
+  }
+
+
+  a.link-abbvie-mobile{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 20px;
+    @media ( min-width: 1200px ){
+      display: none;
     }
   }
 
