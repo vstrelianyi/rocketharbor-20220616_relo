@@ -22,10 +22,10 @@ export class SmartSearchMapComponent implements OnInit {
 
   selectedNeighborhood: number = 0;
   neighborhoods= [
-    { id: 1, neighborhood: '1' },
-    { id: 2, neighborhood: '2' },
-    { id: 3, neighborhood: '3' },
-    { id: 4, neighborhood: '4' },
+    { id: 1, neighborhood: 'Avondale' },
+    { id: 2, neighborhood: 'Beverly' },
+    { id: 3, neighborhood: 'Bridgeport' },
+    { id: 4, neighborhood: 'Brighton Park' },
   ];
 
 }

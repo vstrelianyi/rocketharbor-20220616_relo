@@ -39,19 +39,43 @@ section.map{
   min-width: 200px;
 }
 .ng-select-custom ::ng-deep{
-  .ng-dropdown-panel-items{
-    background-color: $white;
-    padding: 10px;
-    .ng-option-label{
-      &:hover{
-        color: $main;
+
+  .ng-dropdown-panel{
+    border-color: $black;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    .ng-dropdown-panel-items{
+      background-color: $white;
+      .ng-option{
+        display: flex;
+        padding: 2px 10px;
+        font-size: 16px;
+        &:hover{
+          background-color: $main;
+        }
+        .ng-option-label{
+          flex-basis: 100%;
+        }
       }
     }
   }
+
+  .ng-value{
+    padding: 0 5px !important;
+  }
   .ng-input{
+    border: 1px solid $black !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
     input{
-      border: 1px solid $black !important;
+      padding: 0 5px !important;
     }
+  }
+  .ng-clear-wrapper{
+    display: flex;
+    align-items: center;
   }
 }
 
