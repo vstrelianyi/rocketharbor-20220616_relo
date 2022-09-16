@@ -13,6 +13,7 @@ import { StickyHelpComponent } from './sticky-help/sticky-help.component';
 import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.component';
 
 @NgModule( {
   imports: [ BrowserModule, AppRoutingModule, NgSelectModule,FormsModule ],
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     StickyHelpComponent,
     SmartSearchMapComponent,
+    WhyChicagolandComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,233 @@
+@import '../../styles/vars';
+
+section.section-1{
+  padding: 100px 0;
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-1.png');
+    background-size: auto 100%;
+    background-position: right 0;
+  }
+
+  // layout
+  >.container{
+    flex-wrap: wrap;
+    >.row{
+      flex: 1 0 100%;
+      >.col{
+        flex: 0 0 60%;
+      }
+    }
+  }
+
+  // elements
+  h3,small{
+    margin-left: 0px;
+    @media ( min-width: 768px ){
+      margin-left: 50px;
+    }
+    @media ( min-width: 1200px ){
+      margin-left: 100px;
+    }
+  }
+}
+
+section.section-2{
+  padding: 50px 0;
+  background-color: $main;
+
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-2.png');
+    background-size: auto 100%;
+    background-position: left 0;
+  }
+
+  // layout
+  >.container{
+    flex-wrap: wrap;
+    >.row{
+      justify-content: flex-end;
+      >.col{
+        flex: 0 0 55%;
+      }
+    }
+  }
+
+  // elements
+  .section-title{
+    margin-bottom: 30px;
+    strong{
+      color: $yellow;
+    }
+  }
+  small{
+    @media ( min-width: 768px ){
+      padding: 0 50px;
+    }
+    @media ( min-width: 1200px ){
+      padding: 0 100px;
+    }
+  }
+
+}
+
+section.section-3{
+  padding: 50px 0;
+
+  color: $white;
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-3.png');
+    background-size: cover;
+    background-position: right top;
+  }
+
+  // elements
+  .section-title{
+    margin-bottom: 30px;
+  }
+  small{
+    @media ( min-width: 768px ){
+      padding: 0 50px;
+    }
+    @media ( min-width: 1200px ){
+      padding: 0 100px;
+    }
+  }
+}
+
+section.section-4{
+  padding: 50px 0;
+
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-4.png');
+    background-size: cover;
+    background-position: left top;
+  }
+
+  // layout
+  >.container{
+    flex-wrap: wrap;
+    >.row{
+      justify-content: flex-end;
+      >.col{
+        flex: 0 0 55%;
+      }
+    }
+  }
+
+  // elements
+  .section-title{
+    margin-bottom: 30px;
+  }
+  small{
+    @media ( min-width: 768px ){
+      padding: 0 50px;
+    }
+    @media ( min-width: 1200px ){
+      padding: 0 100px;
+    }
+  }
+}
+
+section.section-5{
+  padding: 50px 0;
+  color: $white;
+
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-5.png');
+    background-size: cover;
+    background-position: left top;
+  }
+
+  // layout
+  >.container{
+    flex-wrap: wrap;
+    >.row{
+      justify-content: flex-end;
+      column-gap: 20px;
+      @media ( min-width: 768px ){
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      >.col{
+        flex: 1 0 0;
+      }
+    }
+  }
+
+  .section-title{
+    margin-bottom: 30px;
+  }
+}
+
+section.section-6{
+  padding: 50px 0;
+  @media ( min-width: 768px ){
+    background-image: url('../../assets/images/why-chicagoland/section-6.png');
+    background-size: cover;
+    background-position: left top;
+  }
+
+  // layout
+  >.container{
+    >.row{
+      justify-content: flex-end;
+      >.col{
+        flex: 0 0 50%;
+      }
+    }
+  }
+
+  // elements
+  p{
+    display: flex;
+    flex-direction: column;
+    >*{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// HERO 5
+section.hero-7{
+  background-color: $main;
+  padding: 0;
+
+  // layout
+  >.container{
+    >.row{
+      height: 100%;
+      >.col:nth-child(1){
+        order: 1;
+        background-image: url('../../assets/images/home/home-hero-5.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 400px;
+        @media ( min-width: 768px ){
+        }
+        @media ( min-width: 1200px ){
+          order: 0;
+          background-size: contain;
+          min-height: auto;
+        }
+      }
+      >.col:nth-child(2){
+        order: 0;
+        justify-content: center;
+        padding: 25px 0;
+        @media ( min-width: 1200px ){
+          order: 1;
+          padding: 50px 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // elements
+  .section-title{
+    strong{
+      color: $yellow;
+    }
+  }
+}
