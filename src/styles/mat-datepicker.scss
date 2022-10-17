@@ -1,18 +1,23 @@
 @import './vars';
 
 .mat-form-field.custom-style{
+  width: 100%;
   .mat-form-field-wrapper{
     padding: 0;
   }
 
+  .mat-datepicker-input {
+  }
+
   .mat-form-field-flex{
     background-color: $white;
-    border: 1px solid $yellow;
+    border: 1px solid $grey;
     border-radius: 3px;
-    height: 40px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     &:hover,&:focus{
+      border-color: $yellow;
       box-shadow: 0px 0px 5px 0px rgba(243,196,4,1);
     }
   }
@@ -29,4 +34,52 @@
 
 .mat-form-field-underline{
   display: none;
+}
+
+.mat-button-wrapper{
+  svg{
+    path{
+      fill:$main;
+    }
+  }
+}
+
+button.mat-calendar-previous-button::after {
+  border-color: $main;
+}
+button.mat-calendar-next-button::after {
+  border-color: $main;
+}
+
+.mat-chip-list-wrapper{
+  padding: 4px;
+}
+.custom-multiple-dates[disabled]{
+}
+
+.mat-calendar-body-cell.selected .mat-calendar-body-cell-content, .mat-calendar-body-cell.selected .mat-calendar-body-cell-content:hover, .mat-calendar-body-cell.selected .mat-calendar-body-cell-content:not(.disabled), .mat-calendar-body-cell.selected .mat-calendar-body-cell-content:not(.disabled):hover, .mat-calendar-body-cell.selected:hover .mat-calendar-body-cell-content, .mat-calendar-body-cell.selected:hover .mat-calendar-body-cell-content:hover, .mat-calendar-body-cell.selected:hover .mat-calendar-body-cell-content:not(.disabled), .mat-calendar-body-cell.selected:hover .mat-calendar-body-cell-content:not(.disabled):hover, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled) .mat-calendar-body-cell-content, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled) .mat-calendar-body-cell-content:hover, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled) .mat-calendar-body-cell-content:not(.disabled), .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled) .mat-calendar-body-cell-content:not(.disabled):hover, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled):hover .mat-calendar-body-cell-content, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled):hover .mat-calendar-body-cell-content:hover, .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled):hover .mat-calendar-body-cell-content:not(.disabled), .mat-calendar-body-cell.selected:not(.mat-calendar-body-disabled):hover .mat-calendar-body-cell-content:not(.disabled):hover {
+  background-color: $main!important;
+  color: $black!important;
+}
+
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background-color: transparent;
+  border: 3px solid $main;
+}
+
+.mat-calendar-controls{
+  justify-content: space-between;
+  button.mat-calendar-period-button{
+    order: 1;
+  }
+  button.mat-calendar-previous-button{
+    order: 0;
+  }
+  button.mat-calendar-next-button{
+    order: 2;
+  }
+  .mat-calendar-spacer{
+    display: none;
+  }
 }

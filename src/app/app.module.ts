@@ -23,6 +23,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
 
 @NgModule( {
   imports: [
@@ -37,6 +38,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    NgxMultipleDatesModule
   ],
   declarations: [
     AppComponent,
@@ -54,7 +56,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   ],
   providers: [
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   bootstrap: [AppComponent]
 })

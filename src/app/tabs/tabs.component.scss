@@ -1,19 +1,27 @@
 @import '../../styles/vars';
 
+:host{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 ul.tabs-controls{
   display: flex;
   background-color: #141414;
   gap: 2px;
+  height: 60px;
+  @media( min-width: 600px ){
+    height: 85px;
+  }
   li{
     flex: 1 0 auto;
     background-color: #4C4C4C;
     color: #6D6D6D;
     text-align: center;
-    font-size: 20px;
     display: flex;
-    @media( min-width: 992px ){
-      font-size: 26px;
-    }
+
   }
   li.active{
     background-color: #141414;
@@ -26,47 +34,88 @@ ul.tabs-controls{
     text-transform: uppercase;
     font-weight: 700;
     font-family: 'FreightSansProBlack', sans-serif;
+    font-size: 22px;
+    @media( min-width: 600px ){
+      font-size: 41px;
+    }
   }
 }
 
 .tab{
-  padding: 40px 0px 0px;
+  padding: 50px 0px 0px;
   display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  @media( min-width: 992px ){
-    padding: 50px 0px 0px;
+  flex: 1 0 auto;
+  @media( min-width: 600px ){
+    padding: 75px 0px 0px;
+  }
+  .step{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex: 1 0 100%;
   }
   .top{
-    padding: 0px 20px;
+    padding: 0px 25px;
     flex: 0 0 auto;
   }
   .main{
-    padding: 0px 20px;
+    padding: 0px 25px;
     flex: 1 0 auto;
   }
   .bottom{
     flex: 0 0 auto;
-    padding: 0px 20px;
     background-color: #141414;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    button{
+    padding: 22px 25px;
+
+    button.button-next{
       margin: 0;
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+      @media( min-width: 600px ){
+        height: 71px;
+        width: 372px;
+        font-size: 27px;
+      }
     }
   }
   .hightlighed{
     background-color: #FFFAE0;
-    padding: 10px 7px;
+    padding: 12px 10px;
     margin-bottom: 40px;
+    color: $grey;
     p{
       margin: 0;
-      font-size: 16px;
-      @media( min-width: 992px ){
+      font-size: 20px;
+    }
+    span{
+      display: block;
+    }
+    @media( min-width: 600px ){
+      padding: 23px;
+      p{
         font-size: inherit;
+        font-size: 30px;
       }
+    }
+  }
+
+  button.step-back-button{
+    position: absolute;
+    color: $yellow;
+    font-weight: 700;
+    left: 25px;
+    font-size: 16px;
+    top: 70px;
+    @media( min-width: 600px ){
+      top: 100px;
+      font-size: 26px;
+    }
+    &:hover{
+      color: $main;
     }
   }
 }

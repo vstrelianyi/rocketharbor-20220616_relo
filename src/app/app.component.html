@@ -1,21 +1,23 @@
 
-<header>
-  <app-nav-header></app-nav-header>
-</header>
+<div class="page" [ngClass]="{'no-scroll': generalService.showModal === true}">
+  <header>
+    <app-nav-header></app-nav-header>
+  </header>
 
-<main>
-  <router-outlet></router-outlet>
-</main>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 
-<footer>
-  <div class="container">
-    <app-nav-footer></app-nav-footer>
-  </div>
+  <footer>
+    <div class="container">
+      <app-nav-footer></app-nav-footer>
+    </div>
 
-  <app-sticky-help></app-sticky-help>
+    <app-sticky-help></app-sticky-help>
 
-  <app-modal *ngIf="generalService.showModal">
-    <app-tabs class="tabs"></app-tabs>
-  </app-modal>
+    <app-modal *ngIf="generalService.showModal">
+      <app-tabs class="tabs"></app-tabs>
+    </app-modal>
 
-</footer>
+  </footer>
+</div>

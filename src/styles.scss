@@ -15,6 +15,7 @@
 @import './styles/custom-scrollbar-css';
 
 // material components
+@import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
 @import './styles/mat-datepicker';
 
 // layout
@@ -27,12 +28,3 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.tabs{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .tab{
-    flex: 1 0 100%;
-  }
-}

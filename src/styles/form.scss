@@ -3,6 +3,12 @@
 form{
   margin-bottom: 20px;
 
+  .line{
+    width: 100%;
+    height: 1px;
+    background-color: $grey2;
+  }
+
   .button-accordion{
     display: flex;
     align-items: center;
@@ -23,17 +29,18 @@ form{
     legend{
       margin-bottom: 40px;
       flex: 1 0 100%;
-      margin: 10px 0;
+      margin: 30px 0;
       font-weight: 700;
-      font-size: 20px;
-      @media( min-width: 992px ){
-        font-size: 30px;
+      font-size: 24px;
+      @media( min-width: 600px ){
+        font-size: 36px;
       }
     }
+
     label{
-      font-size: 16px;
-      @media( min-width: 992px ){
-        font-size: inherit;
+      font-size: 24px;
+      @media( min-width: 600px ){
+        font-size: 36px;
       }
     }
 
@@ -62,21 +69,21 @@ form{
       flex-wrap: wrap;
       padding: 10px 0;
       &.bordered{
-        border-top: 1px solid $grey;
+        border-top: 2px solid $grey;
       }
       p{
-        font-size: 16px;
+        font-size: 20px;
         margin: 0;
         margin-bottom: 20px;
-        @media( min-width: 992px ){
-          font-size: 22px;
+        @media( min-width: 600px ){
+          font-size: 30px;
         }
       }
       .input-group{
         flex: 1 0 50%;
         margin-bottom: 20px;
         &.group-datepicker{
-          flex: 1 0 100%;
+          flex: 0 0 100%;
         }
       }
 
