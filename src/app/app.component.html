@@ -11,5 +11,11 @@
   <div class="container">
     <app-nav-footer></app-nav-footer>
   </div>
+
   <app-sticky-help></app-sticky-help>
+
+  <app-modal *ngIf="generalService.showModal">
+    <app-tabs></app-tabs>
+  </app-modal>
+
 </footer>

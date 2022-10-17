@@ -1,4 +1,5 @@
 import { Component,} from '@angular/core';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-nav-header',
@@ -7,7 +8,8 @@ import { Component,} from '@angular/core';
 })
 export class NavHeaderComponent {
   isMenuOpen = false;
-
+  constructor( public generalService: GeneralService ){
+  }
   toggleMenu(): void{
     this.isMenuOpen = !this.isMenuOpen;
   }

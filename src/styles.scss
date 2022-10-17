@@ -10,6 +10,11 @@
 @import './styles/button';
 @import './styles/img';
 @import './styles/icons';
+@import './styles/custom-checkbox';
+@import './styles/form';
+
+// material components
+@import './styles/mat-datepicker';
 
 // layout
 @import './styles/section';
@@ -18,3 +23,6 @@
 // decorators/mixins
 @import './styles/decorators.scss';
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

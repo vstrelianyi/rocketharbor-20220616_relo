@@ -1,0 +1,367 @@
+<ul class="tabs-controls">
+  <li *ngFor="let tab of tabList" [ngClass]="{'active':selectedTab === tab}">
+    <button (click)="selectTab(tab)">{{ tab }}</button>
+  </li>
+</ul>
+<div class="tab">
+
+  <!-- CALL -->
+  <ng-container *ngIf="selectedTab==='call'">
+    <div class="top">
+      <div class="hightlighed">
+        <p><strong>We love that you want to talk with us</strong>, please provide us your phone number and we will give you a call right back during regular business hours.</p>
+      </div>
+    </div>
+    <div class="main">
+
+      <form action="">
+        <fieldset>
+
+          <legend>Schedule a Call</legend>
+
+          <div class="fieldset-content bordered">
+            <p>Pick the time of day the best works for you (up to 2)*</p>
+            <div class="input-group">
+              <input
+                id="call-morning"
+                name="call-morning"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="call-morning">Morning</label>
+            </div>
+
+            <div class="input-group">
+              <input
+                id="call-afternoon"
+                name="call-afternoon"
+                type="checkbox"
+                class=" custom-checkbox"
+              />
+              <label for="call-afternoon">Afternoon</label>
+            </div>
+
+            <div class="input-group">
+              <input
+                id="call-evening"
+                name="call-evening"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="call-evening">Evening</label>
+            </div>
+          </div>
+
+          <div class="fieldset-content">
+            <p>Pick 2-3 days that would be best</p>
+
+            <div class="input-group group-datepicker">
+              <mat-form-field class="custom-style">
+                <!-- <mat-label>Choose a date</mat-label> -->
+                <input matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </form>
+
+    </div>
+    <div class="bottom">
+      <button class="button connect-agent">Next</button>
+    </div>
+  </ng-container>
+
+  <!-- MESSAGE -->
+  <ng-container *ngIf="selectedTab==='message'">
+    <div class="top">
+    </div>
+    <div class="main">
+
+      <form class="form-message" action="">
+
+        <fieldset>
+          <legend>Fill out your contact info</legend>
+
+          <div class="fieldset-content">
+            <input
+              id="first-name"
+              name="first-name"
+              type="text"
+              class="input-text"
+              placeholder="First Name *"
+            />
+            <input
+              id="last-name"
+              name="last-name"
+              type="text"
+              class="input-text"
+              placeholder="Last Name *"
+            />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="input-text full"
+              placeholder="Email Address *"
+            />
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              class="input-text"
+              placeholder="Phone *"
+            />
+
+            <div class="group">
+              <p>I prefer to be contacted by:</p>
+              <div class="input-group">
+                <input
+                  id="contact-texting"
+                  name="contact-texting"
+                  type="checkbox"
+                  class="custom-checkbox"
+                />
+                <label for="contact-texting">Texting</label>
+              </div>
+              <div class="input-group">
+                <input
+                  id="contact-email"
+                  name="contact-email"
+                  type="checkbox"
+                  class="custom-checkbox"
+                />
+                <label for="contact-email">Email</label>
+              </div>
+            </div>
+
+            <div class="input-group-textarea">
+              <textarea name="message" id="" placeholder="Message"></textarea>
+              <p>max 400 characters</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="italic">Additional optional information</p>
+        <fieldset>
+          <legend><strong>Areas Neighborhoods I am interested In</strong> (share 1 - 5)</legend>
+          <div class="fieldset-content">
+            <input
+              id="neighborhood-1"
+              name="neighborhood-1"
+              type="text"
+              class="input-text full"
+              placeholder=""
+            />
+            <input
+              id="neighborhood-2"
+              name="neighborhood-2"
+              type="text"
+              class="input-text full"
+              placeholder=""
+            />
+            <input
+              id="neighborhood-3"
+              name="neighborhood-3"
+              type="text"
+              class="input-text full"
+              placeholder=""
+            />
+            <input
+              id="neighborhood-4"
+              name="neighborhood-4"
+              type="text"
+              class="input-text full"
+              placeholder=""
+            />
+            <input
+              id="neighborhood-5"
+              name="neighborhood-5"
+              type="text"
+              class="input-text full"
+              placeholder=""
+            />
+
+          </div>
+
+        </fieldset>
+
+        <fieldset class="range">
+          <legend>General pricepoint or range</legend>
+          <div class="fieldset-content">
+            <input
+              id="range-min"
+              name="range-min"
+              type="number"
+              class="input-text"
+              placeholder="Enter Min"
+              min="0"
+            />
+            <div class="divider">-</div>
+            <input
+              id="range-max"
+              name="range-max"
+              type="number"
+              class="input-text"
+              placeholder="Enter Max"
+              min="0"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>General timeframe of move (month, week)</legend>
+          <div class="fieldset-content">
+            <div class="input-group group-datepicker">
+              <mat-form-field class="custom-style">
+                <!-- <mat-label>Choose a date</mat-label> -->
+                <input matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </fieldset>
+
+        <fieldset class="style">
+          <legend>Style of Home</legend>
+          <div class="fieldset-content">
+            <div class="input-group">
+              <input
+                id="single-family"
+                name="single-family"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="single-family">Single Family</label>
+            </div>
+            <div class="input-group">
+              <input
+                id="townhome"
+                name="townhome"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="townhome">Townhome</label>
+            </div>
+            <div class="input-group">
+              <input
+                id="condo"
+                name="condo"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="condo">Condo</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="ownership">
+          <legend>Own or Rent</legend>
+          <div class="fieldset-content">
+            <div class="input-group">
+              <input
+                id="own"
+                name="own"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="own">Own</label>
+            </div>
+            <div class="input-group">
+              <input
+                id="rent"
+                name="rent"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="rent">Rent</label>
+            </div>
+          </div>
+        </fieldset>
+
+      </form>
+
+    </div>
+    <div class="bottom">
+      <button class="button connect-agent">Next</button>
+    </div>
+  </ng-container>
+
+  <!-- MEET -->
+  <ng-container *ngIf="selectedTab==='meet'">
+    <div class="top">
+    </div>
+    <div class="main">
+
+      <form action="">
+        <fieldset>
+
+          <legend>Schedule a Meeting</legend>
+
+          <div class="fieldset-content bordered">
+            <p>Pick the time of day the best works for you (up to 2)*</p>
+            <div class="input-group">
+              <input
+                id="call-morning"
+                name="call-morning"
+                type="checkbox"
+                class=" custom-checkbox"
+              />
+              <label for="call-morning">Morning</label>
+            </div>
+
+            <div class="input-group">
+              <input
+                id="call-afternoon"
+                name="call-afternoon"
+                type="checkbox"
+                class=" custom-checkbox"
+              />
+              <label for="call-afternoon">Afternoon</label>
+            </div>
+
+            <div class="input-group">
+              <input
+                id="call-evening"
+                name="call-evening"
+                type="checkbox"
+                class=" custom-checkbox"
+              />
+              <label for="call-evening">Evening</label>
+            </div>
+          </div>
+
+          <div class="fieldset-content">
+            <p>Pick 2-3 days that would be best</p>
+
+            <div class="input-group group-datepicker">
+              <mat-form-field class="custom-style">
+                <!-- <mat-label>Choose a date</mat-label> -->
+                <input matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </form>
+
+    </div>
+    <div class="bottom">
+      <button class="button connect-agent">Next</button>
+    </div>
+  </ng-container>
+
+</div>

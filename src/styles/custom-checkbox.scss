@@ -1,0 +1,31 @@
+@import './vars';
+
+.custom-checkbox{
+  display: none;
+}
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.custom-checkbox+label::before {
+  content: '✔';
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $black;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.custom-checkbox:checked+label::before {
+  color: $black;
+  background-color: $main;
+  border-color: $main;
+}
+.custom-checkbox:checked+label{
+  // font-weight: 700;
+}
+

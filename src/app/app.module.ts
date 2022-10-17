@@ -14,9 +14,30 @@ import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.com
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.component';
+import { ModalComponent } from './modal/modal.component';
+import { TabsComponent } from './tabs/tabs.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule( {
-  imports: [ BrowserModule, AppRoutingModule, NgSelectModule,FormsModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgSelectModule,
+    FormsModule,
+
+    BrowserAnimationsModule,
+
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+  ],
   declarations: [
     AppComponent,
     NavHeaderComponent,
@@ -28,8 +49,13 @@ import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.compo
     StickyHelpComponent,
     SmartSearchMapComponent,
     WhyChicagolandComponent,
+    ModalComponent,
+    TabsComponent,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule{
