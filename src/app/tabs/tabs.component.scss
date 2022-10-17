@@ -39,11 +39,14 @@ ul.tabs-controls{
   }
   .top{
     padding: 0px 20px;
+    flex: 0 0 auto;
   }
   .main{
     padding: 0px 20px;
+    flex: 1 0 auto;
   }
   .bottom{
+    flex: 0 0 auto;
     padding: 0px 20px;
     background-color: #141414;
     display: flex;

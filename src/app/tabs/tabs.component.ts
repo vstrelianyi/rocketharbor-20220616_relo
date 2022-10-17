@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import {MatCalendar} from '@angular/material/datepicker';
+import { MatCalendar } from '@angular/material/datepicker';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-tabs',
@@ -9,15 +10,15 @@ import {MatCalendar} from '@angular/material/datepicker';
 })
 export class TabsComponent implements OnInit {
   tabList = [ 'call', 'message', 'meet']
-  selectedTab: any ;
   isAccordionOpened: any = false;
-  constructor() { }
+
+  constructor( public generalService: GeneralService ) { }
 
   ngOnInit(): void {
-    this.selectedTab = this.tabList[1];
+    // this.generalService.tab='call;
   }
   selectTab(tab:any){
-    this.selectedTab = tab;
+    this.generalService.tab=tab;
   }
 
   toggleAccordion(): void{

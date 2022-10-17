@@ -13,5 +13,8 @@ export class NavHeaderComponent {
   toggleMenu(): void{
     this.isMenuOpen = !this.isMenuOpen;
   }
-
+  toggleModal(): void{
+    this.generalService.showModal=true;
+    this.generalService.tab='call';
+  }
 }

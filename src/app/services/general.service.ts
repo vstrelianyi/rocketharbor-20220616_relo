@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GeneralService {
-  showModal = true;
+  // showModal = true;
+  showModal = false;
+  tab: string | null = null;
   constructor() { }
 }

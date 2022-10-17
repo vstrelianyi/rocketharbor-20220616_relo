@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-sticky-help',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StickyHelpComponent implements OnInit {
 
-  constructor() { }
+  constructor( public generalService: GeneralService ) { }
 
   ngOnInit(): void {
   }
 
+
+  btnClick( tab:any ){
+    this.generalService.tab=tab;
+    this.generalService.showModal=true;
+  }
 }

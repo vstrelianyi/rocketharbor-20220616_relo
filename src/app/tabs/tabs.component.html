@@ -1,12 +1,12 @@
 <ul class="tabs-controls">
-  <li *ngFor="let tab of tabList" [ngClass]="{'active':selectedTab === tab}">
+  <li *ngFor="let tab of tabList" [ngClass]="{'active':generalService.tab === tab}">
     <button (click)="selectTab(tab)">{{ tab }}</button>
   </li>
 </ul>
 <div class="tab">
 
   <!-- CALL -->
-  <ng-container *ngIf="selectedTab==='call'">
+  <ng-container *ngIf="generalService.tab==='call'">
     <div class="top">
       <div class="hightlighed">
         <p><strong>We love that you want to talk with us</strong>, please provide us your phone number and we will give you a call right back during regular business hours.</p>
@@ -78,7 +78,7 @@
   </ng-container>
 
   <!-- MESSAGE -->
-  <ng-container *ngIf="selectedTab==='message'">
+  <ng-container *ngIf="generalService.tab==='message'">
     <div class="top">
     </div>
     <div class="main">
@@ -308,7 +308,7 @@
   </ng-container>
 
   <!-- MEET -->
-  <ng-container *ngIf="selectedTab==='meet'">
+  <ng-container *ngIf="generalService.tab==='meet'">
     <div class="top">
     </div>
     <div class="main">
