@@ -10,6 +10,7 @@ import {MatCalendar} from '@angular/material/datepicker';
 export class TabsComponent implements OnInit {
   tabList = [ 'call', 'message', 'meet']
   selectedTab: any ;
+  isAccordionOpened: any = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +18,10 @@ export class TabsComponent implements OnInit {
   }
   selectTab(tab:any){
     this.selectedTab = tab;
+  }
+
+  toggleAccordion(): void{
+    this.isAccordionOpened = !this.isAccordionOpened;
   }
 
   dateChanged($event:any){

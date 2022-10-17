@@ -1,6 +1,21 @@
 @import './vars';
 
 form{
+  margin-bottom: 20px;
+
+  .button-accordion{
+    display: flex;
+    align-items: center;
+    span{
+      margin-right: 5px;
+    }
+    &.active{
+      svg{
+        transform: rotate( -180deg );
+      }
+    }
+  }
+
   fieldset{
     display: flex;
     flex-direction: column;
@@ -27,11 +42,19 @@ form{
       border-radius: 3px;
       height: 40px;
       padding: 0 10px;
+      &:focus{
+        border-color: $yellow;
+        box-shadow: 0px 0px 5px 0px rgba(243,196,4,1);
+      }
     }
     textarea{
       border: 1px solid $grey;
       border-radius: 3px;
       padding: 10px 10px;
+      &:focus{
+        border-color: $yellow;
+        box-shadow: 0px 0px 5px 0px rgba(243,196,4,1);
+      }
     }
 
     .fieldset-content{
