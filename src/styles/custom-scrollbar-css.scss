@@ -1,0 +1,22 @@
+// https://alligator.io/css/css-scrollbars/
+@import './vars';
+
+*::-webkit-scrollbar {
+	width: 5px;
+	// height: 5px;
+}
+*::-webkit-scrollbar-track {
+	// background: $black;
+	background: $grey;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $yellow;
+  border-radius: 5px;
+	border: none;
+}
+
+// The emerging W3C standard that is currently Firefox-only
+* {
+	scrollbar-width: thin;
+	scrollbar-color: $yellow $grey;
+}
