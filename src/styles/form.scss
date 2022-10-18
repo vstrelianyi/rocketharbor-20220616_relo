@@ -2,11 +2,12 @@
 
 form{
   margin-bottom: 20px;
+  font-family: 'FreightSansProBook';
 
   .line{
     width: 100%;
     height: 1px;
-    background-color: $grey2;
+    background-color: $grey1;
   }
 
   .button-accordion{
@@ -25,15 +26,17 @@ form{
   fieldset{
     display: flex;
     flex-direction: column;
-
+    font-family: inherit;
     legend{
       margin-bottom: 40px;
       flex: 1 0 100%;
-      margin: 30px 0;
+      margin: 20px 0;
       font-weight: 700;
       font-size: 24px;
+      font-family: 'FreightSansProSemibold';
+      letter-spacing: -1px;
       @media( min-width: 600px ){
-        font-size: 36px;
+        font-size: 30px;
       }
     }
 
@@ -44,20 +47,33 @@ form{
       }
     }
 
-    .input-text{
-      border: 1px solid $grey;
-      border-radius: 3px;
+    input.input-text{
+      font-family: 'FreightSansProBook';
+      border: 2px solid $grey1;
+      border-radius: 6px;
       height: 40px;
       padding: 0 10px;
+      font-size: 16px;
+      @media( min-width: 600px ){
+        font-size: 24px;
+      }
       &:focus{
         border-color: $yellow;
         box-shadow: 0px 0px 5px 0px rgba(243,196,4,1);
       }
     }
     textarea{
-      border: 1px solid $grey;
-      border-radius: 3px;
-      padding: 10px 10px;
+      border: 1px solid $grey1;
+      border-radius: 6px;
+      padding: 15px 10px;
+      font-size: 16px;
+      font-family: 'FreightSansProBook';
+      height: 163px;
+      width: 100%;
+      @media( min-width: 600px ){
+        font-size: 24px;
+        padding: 24px 16px;
+      }
       &:focus{
         border-color: $yellow;
         box-shadow: 0px 0px 5px 0px rgba(243,196,4,1);
@@ -69,12 +85,13 @@ form{
       flex-wrap: wrap;
       padding: 10px 0;
       &.bordered{
-        border-top: 2px solid $grey;
+        border-top: 2px solid $grey1;
       }
       p{
         font-size: 20px;
         margin: 0;
         margin-bottom: 20px;
+        font-family: 'FreightSansProBook';
         @media( min-width: 600px ){
           font-size: 30px;
         }
@@ -95,32 +112,34 @@ form{
 form.form-message{
   fieldset{
     margin-bottom: 30px;
+
     .fieldset-content{
-      gap: 20px;
+      row-gap: 40px;
+      column-gap: 16px;
       .input-text{
         flex: 0 1 100%;
-        @media( min-width: 768px ){
-          flex: 0 1 calc( 50% - 10px );
+        height: 62px;
+        @media( min-width: 600px ){
+          flex: 0 1 calc( 50% - 8px );
         }
         &.full{
           flex: 0 1 100%;
         }
       }
 
-      input[type="checkbox"] + label{
-        font-size: 12px;
-      }
-
       .group{
         flex: 0 1 100%;
-        @media( min-width: 768px ){
-          flex: 0 1 calc( 50% - 10px );
+        @media( min-width: 600px ){
+          flex: 0 1 calc( 50% - 16px );
         }
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         p{
           font-size: 16px;
+          @media( min-width: 600px ){
+            font-size: 24px;
+          }
           margin: 0;
         }
         .input-group{
@@ -132,8 +151,6 @@ form.form-message{
         flex-direction: column;
         flex: 1 0 100%;
         textarea{
-          width: 100%;
-          height: 150px;
         }
         p{
           font-size: 12px;
