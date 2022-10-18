@@ -73,6 +73,7 @@ nav{
 
       a.tel{
         display: flex;
+        align-items: center;
         margin-bottom: 10px;
         .icon{
           display: flex;
@@ -156,6 +157,7 @@ nav{
         color: $white;
         .icon{
           transform: rotate( 20deg ) translateY( 15px );
+          margin-top: -30px;
           path{
             fill: $white;
           }
@@ -199,6 +201,7 @@ nav{
           color: $black;
           .icon{
             transform: rotate( 20deg ) translateY( 5px );
+            margin-top: -5px;
             path{
               fill: $black;
             }

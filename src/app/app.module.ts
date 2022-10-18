@@ -12,12 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { StickyHelpComponent } from './sticky-help/sticky-help.component';
 import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.component';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
 import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.component';
 import { ModalComponent } from './modal/modal.component';
 import { TabsComponent } from './tabs/tabs.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
@@ -30,9 +31,11 @@ import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
     BrowserModule,
     AppRoutingModule,
     NgSelectModule,
-    FormsModule,
 
     BrowserAnimationsModule,
+
+    FormsModule,
+    ReactiveFormsModule,
 
     MatDatepickerModule,
     MatInputModule,

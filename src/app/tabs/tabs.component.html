@@ -6,7 +6,7 @@
 
 <div class="tab">
 
-  <!-- CALL -->
+  <!-- TAB: CALL -->
   <ng-container *ngIf="generalService.tab==='call'">
 
     <!-- STEP 1 -->
@@ -18,54 +18,61 @@
       </div>
 
       <div class="main">
-        <form action="">
-          <fieldset>
 
-            <legend>Schedule a Call</legend>
+        <form action="" [formGroup]="callFormControlStep1">
+          <legend>Schedule a Call</legend>
+          <fieldset>
             <div class="fieldset-content bordered">
               <p>Pick the time of day the best works for you (up to 2)*</p>
               <div class="input-group">
                 <input
                   id="call-morning"
-                  name="call-morning"
                   type="checkbox"
                   class="custom-checkbox"
-                />
+                  formControlName="callMorning"
+                  />
+                  <!-- name="call-morning" -->
+                  <!-- [formControl]="callMorning" -->
                 <label for="call-morning">Morning</label>
               </div>
 
               <div class="input-group">
                 <input
                   id="call-afternoon"
-                  name="call-afternoon"
                   type="checkbox"
                   class=" custom-checkbox"
-                />
+                  formControlName="callAfternoon"
+                  />
+                  <!-- name="call-afternoon" -->
+                  <!-- [formControl]="callAfternoon" -->
                 <label for="call-afternoon">Afternoon</label>
               </div>
 
               <div class="input-group">
                 <input
                   id="call-evening"
-                  name="call-evening"
                   type="checkbox"
                   class="custom-checkbox"
-                />
+                  formControlName="callEvening"
+                  />
+                  <!-- name="call-evening" -->
+                  <!-- [formControl]="callEvening" -->
                 <label for="call-evening">Evening</label>
               </div>
             </div>
+          </fieldset>
 
+          <fieldset>
             <div class="fieldset-content bordered">
               <p>Pick 2-3 days that would be best</p>
 
               <div class="input-group group-datepicker">
                 <mat-form-field class="custom-style">
                   <ngx-multiple-dates
-                    [(ngModel)]="modelCall"
+                  formControlName="selectedDates"
                     class="custom-multiple-dates"
                     [matDatepicker]="picker"
                     placeholder=""
-                    name="selectedDates"
                     (dateChange)="dateChanged($event)"
                     (remove)="dateRemoved($event)"
                     [minlength]="1"
@@ -95,9 +102,232 @@
     <div *ngIf="currentStep===2" class="step step-2">
       <div class="top">
         <button class="step-back-button" (click)="changeStep(1)">Back</button>
+
         <div class="hightlighed">
-          <span *ngFor="let result of results">{{ this.pipe.transform(result, 'EEEE, MMMM d, y') }}</span>
+          <div class="form-results">
+            <p>You've selected</p>
+            <div class="form-results-row" *ngFor="let date of this.callFormControlStep1.value.selectedDates">
+              <span class="date">{{ this.pipe.transform(date, 'EEEE, MMMM d, y') }}</span>
+              <span class="time">{{ this.callFormControlStep1.value.callMorning ? ', Morning' : null }}</span>
+              <span class="time">{{ this.callFormControlStep1.value.callAfternoon ? ', Afternoon' : null }}</span>
+              <span class="time">{{ this.callFormControlStep1.value.callEvening ? ', Evening' : null }}</span>
+            </div>
+          </div>
         </div>
+
+        <form class="form-contact-info" [formGroup]="callFormControlStep2" action="">
+
+          <fieldset>
+            <legend>Fill out your contact info</legend>
+
+            <div class="fieldset-content">
+              <input
+                id="first-name"
+                formControlName="firstName"
+                type="text"
+                class="input-text"
+                placeholder="First Name *"
+              />
+              <input
+                id="last-name"
+                formControlName="lastName"
+                type="text"
+                class="input-text"
+                placeholder="Last Name *"
+              />
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                class="input-text full"
+                placeholder="Email Address *"
+              />
+              <input
+                id="phone"
+                formControlName="phone"
+                type="text"
+                class="input-text"
+                placeholder="Phone *"
+              />
+
+              <div class="input-group-textarea">
+                <textarea
+                  formControlName="message"
+                  id="text-area-message"
+                  placeholder="Message"
+                ></textarea>
+                <p>max 400 characters</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <button
+            class="button-accordion italic"
+            (click)="toggleAccordion()"
+            [ngClass]="{'active':isAccordionOpened === true}"
+          >
+            <span>Additional optional information</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+
+          <div *ngIf="isAccordionOpened" class="additional-fields">
+            <fieldset>
+              <legend><strong>Areas Neighborhoods I am interested In</strong> (share 1 - 5)</legend>
+              <div class="fieldset-content">
+                <input
+                  id="neighborhood-1"
+                  formControlName="neighborhood1"
+                  type="text"
+                  class="input-text full"
+                  placeholder=""
+                />
+                <input
+                  id="neighborhood-2"
+                  formControlName="neighborhood2"
+                  type="text"
+                  class="input-text full"
+                  placeholder=""
+                />
+                <input
+                  id="neighborhood-3"
+                  formControlName="neighborhood3"
+                  type="text"
+                  class="input-text full"
+                  placeholder=""
+                />
+                <input
+                  id="neighborhood-4"
+                  formControlName="neighborhood4"
+                  type="text"
+                  class="input-text full"
+                  placeholder=""
+                />
+                <input
+                  id="neighborhood-5"
+                  formControlName="neighborhood5"
+                  type="text"
+                  class="input-text full"
+                  placeholder=""
+                />
+
+              </div>
+
+            </fieldset>
+
+            <fieldset class="range">
+              <legend>General pricepoint or range</legend>
+              <div class="fieldset-content">
+                <input
+                  id="price-range-min"
+                  formControlName="priceRangeMin"
+                  type="number"
+                  class="input-text"
+                  placeholder="Enter Min"
+                  min="0"
+                />
+                <div class="divider">-</div>
+                <input
+                  id="range-max"
+                  formControlName="priceRangeMax"
+                  type="number"
+                  class="input-text"
+                  placeholder="Enter Max"
+                  min="0"
+                />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>General timeframe of move (month, week)</legend>
+              <div class="fieldset-content">
+                <div class="input-group group-datepicker">
+                  <mat-form-field class="custom-style">
+                    <ngx-multiple-dates
+                      formControlName="moveDates"
+                      class="custom-multiple-dates"
+                      [matDatepicker]="picker"
+                      placeholder=""
+                      (dateChange)="dateChanged($event)"
+                      (remove)="dateRemoved($event)"
+                      [minlength]="1"
+                      [maxlength]="3"
+                      #disabledForValuesOutput="ngxMultipleDates"
+                      [disabled]="false"
+                    >
+                    </ngx-multiple-dates>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+              </div>
+            </fieldset>
+
+            <fieldset class="style">
+              <legend>Style of Home</legend>
+              <div class="fieldset-content">
+                <div class="input-group">
+                  <input
+                    id="home-style-single-family"
+                    formControlName="homeStyleSingleFamily"
+                    type="checkbox"
+                    class="custom-checkbox"
+                  />
+                  <label for="home-style-single-family">Single Family</label>
+                </div>
+                <div class="input-group">
+                  <input
+                    id="home-style-townhome"
+                    formControlName="homeStyleTownhome"
+                    type="checkbox"
+                    class="custom-checkbox"
+                  />
+                  <label for="home-style-townhome">Townhome</label>
+                </div>
+                <div class="input-group">
+                  <input
+                    id="home-style-condo"
+                    formControlName="homeStyleCondo"
+                    type="checkbox"
+                    class="custom-checkbox"
+                  />
+                  <label for="home-style-condo">Condo</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="ownership">
+              <legend>Own or Rent</legend>
+              <div class="fieldset-content">
+                <div class="input-group">
+                  <input
+                    id="ownership-own"
+                    formControlName="ownershipOwn"
+                    type="checkbox"
+                    class="custom-checkbox"
+                  />
+                  <label for="ownership-own">Own</label>
+                </div>
+                <div class="input-group">
+                  <input
+                    id="ownership-rent"
+                    formControlName="ownershipRent"
+                    type="checkbox"
+                    class="custom-checkbox"
+                  />
+                  <label for="ownership-rent">Rent</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </form>
+
+
+
+
       </div>
 
       <div class="main">
@@ -108,7 +338,7 @@
     </div>
   </ng-container>
 
-  <!-- MESSAGE -->
+  <!-- TAB: MESSAGE -->
   <ng-container *ngIf="generalService.tab==='message'">
 
     <!-- STEP 1 -->
@@ -117,7 +347,7 @@
       </div>
       <div class="main">
 
-        <form class="form-message" action="">
+        <form class="form-contact-info" action="">
 
           <fieldset>
             <legend>Fill out your contact info</legend>
@@ -355,7 +585,7 @@
     <!-- STEP 2 -->
   </ng-container>
 
-  <!-- MEET -->
+  <!-- TAB: MEET -->
   <ng-container *ngIf="generalService.tab==='meet'">
 
     <!-- STEP 1 -->
