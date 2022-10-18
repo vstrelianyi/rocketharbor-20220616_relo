@@ -15,9 +15,6 @@ export class TabsComponent implements OnInit {
   pipe = new DatePipe('en-US');
   tabList = [ 'call', 'message', 'meet']
   isAccordionOpened: any = false;
-  // modelCall: Date[] = [];
-  modelMessage: Date[] = [];
-  modelMeet: Date[] = [];
   currentStep: number = 1;
   results: string[] = [];
 
@@ -26,6 +23,7 @@ export class TabsComponent implements OnInit {
   // callAfternoon: FormControl = new FormControl( false, [] );
   // callEvening: FormControl = new FormControl( false, [] );
 
+  // CALL FORM
   callFormControlStep1: FormGroup =  new FormGroup( {
     callMorning: new FormControl( false, [] ),
     callAfternoon: new FormControl( false, [] ),
@@ -38,6 +36,61 @@ export class TabsComponent implements OnInit {
     lastName: new FormControl( null, [] ),
     email: new FormControl( null, [] ),
     phone: new FormControl( null, [] ),
+    message: new FormControl( null, [] ),
+    neighborhood1: new FormControl( null, [] ),
+    neighborhood2: new FormControl( null, [] ),
+    neighborhood3: new FormControl( null, [] ),
+    neighborhood4: new FormControl( null, [] ),
+    neighborhood5: new FormControl( null, [] ),
+    priceRangeMin: new FormControl( null, [] ),
+    priceRangeMax: new FormControl( null, [] ),
+    moveDates: new FormControl( [], [] ),
+    homeStyleSingleFamily: new FormControl( false, [] ),
+    homeStyleTownhome: new FormControl( false, [] ),
+    homeStyleCondo: new FormControl( false, [] ),
+    ownershipOwn: new FormControl( false, [] ),
+    ownershipRent: new FormControl( false, [] ),
+  } );
+
+  // MESSAGE FORM
+  messageFormControlStep1: FormGroup =  new FormGroup( {
+    firstName: new FormControl( null, [] ),
+    lastName: new FormControl( null, [] ),
+    email: new FormControl( null, [] ),
+    phone: new FormControl( null, [] ),
+    contactMethodTexting: new FormControl( null, [] ),
+    contactMethodEmail: new FormControl( null, [] ),
+    message: new FormControl( null, [] ),
+    neighborhood1: new FormControl( null, [] ),
+    neighborhood2: new FormControl( null, [] ),
+    neighborhood3: new FormControl( null, [] ),
+    neighborhood4: new FormControl( null, [] ),
+    neighborhood5: new FormControl( null, [] ),
+    priceRangeMin: new FormControl( null, [] ),
+    priceRangeMax: new FormControl( null, [] ),
+    moveDates: new FormControl( [], [] ),
+    homeStyleSingleFamily: new FormControl( false, [] ),
+    homeStyleTownhome: new FormControl( false, [] ),
+    homeStyleCondo: new FormControl( false, [] ),
+    ownershipOwn: new FormControl( false, [] ),
+    ownershipRent: new FormControl( false, [] ),
+  } );
+
+  // MEET FORM
+  meetFormControlStep1: FormGroup =  new FormGroup( {
+    callMorning: new FormControl( false, [] ),
+    callAfternoon: new FormControl( false, [] ),
+    callEvening: new FormControl( false, [] ),
+    selectedDates: new FormControl( [], [] )
+  } );
+
+  meetFormControlStep2: FormGroup =  new FormGroup( {
+    firstName: new FormControl( null, [] ),
+    lastName: new FormControl( null, [] ),
+    email: new FormControl( null, [] ),
+    phone: new FormControl( null, [] ),
+    contactMethodTexting: new FormControl( null, [] ),
+    contactMethodEmail: new FormControl( null, [] ),
     message: new FormControl( null, [] ),
     neighborhood1: new FormControl( null, [] ),
     neighborhood2: new FormControl( null, [] ),
@@ -69,6 +122,7 @@ export class TabsComponent implements OnInit {
   selectTab(tab:any):void{
     this.currentStep=1;
     this.generalService.tab=tab;
+    this.isAccordionOpened=false;
   }
   changeStep( newStep: number ):void{
     this.currentStep=newStep;
@@ -76,8 +130,22 @@ export class TabsComponent implements OnInit {
   toggleAccordion(): void{
     this.isAccordionOpened = !this.isAccordionOpened;
   }
-  scheduleCall(): void{
-    console.log(this.callFormControlStep1.value, this.callFormControlStep2.value)
+
+  sendForm( formName: string ): void{
+    switch (formName) {
+      case 'callForm':
+        console.log( 'callForm', this.callFormControlStep1.value, this.callFormControlStep2.value )
+        break;
+      case 'messageForm':
+        console.log( 'messageForm', this.messageFormControlStep1.value)
+        break;
+      case 'meetForm':
+        console.log( 'meetForm', this.meetFormControlStep1.value, this.meetFormControlStep2.value)
+        break;
+      default:
+        break;
+    }
+
   }
 
   dateChanged($event:any):void{

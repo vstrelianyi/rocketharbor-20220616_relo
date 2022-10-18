@@ -72,12 +72,12 @@ ul.tabs-controls{
 
     button.button-next{
       margin: 0;
-      width: 200px;
+      min-width: 200px;
       height: 50px;
       font-size: 20px;
       @media( min-width: 600px ){
         height: 71px;
-        width: 372px;
+        min-width: 372px;
         font-size: 27px;
       }
     }
@@ -121,9 +121,17 @@ ul.tabs-controls{
   }
 }
 
-.form-results{
-  .form-results-row{
+.results{
+  position: relative;
+  .notification{
+    padding: 20px 0;
+  }
+  .results-row{
     display: flex;
+  }
+
+  button.step-back-button{
+    position: static;
   }
   p{
     color: $black;

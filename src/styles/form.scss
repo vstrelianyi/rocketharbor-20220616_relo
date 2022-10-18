@@ -16,9 +16,14 @@ form{
     span{
       margin-right: 15px;
     }
+    svg{
+      transform: rotate( -90deg );
+      width: 25px;
+      height: 25px;
+    }
     &.active{
       svg{
-        transform: rotate( -180deg );
+        transform: rotate( 0deg );
       }
     }
   }
