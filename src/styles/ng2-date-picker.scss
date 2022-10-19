@@ -1,5 +1,6 @@
 @import './vars';
 
+// input
 .input-date-picker{
   background-color: $white;
   border: 1px solid $grey;
@@ -9,11 +10,88 @@
   align-items: center;
 
   >div{
-    width: 100%;
     .dp-input-container{
       input{
-        width: 100%;
+        width: 596px;
+        font-size: 26px;
+        font-family: "FreightSansProBook";
+        padding: 0 10px;
       }
     }
+  }
+}
+
+// calendar navigation
+.dp-calendar-nav-container{
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  .dp-nav-header{
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    .dp-nav-header-btn{
+      font-size: 18px;
+    }
+  }
+
+  .dp-nav-btns-container{
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+
+    .dp-current-location-btn{
+      border-color: $main;
+      background-color: $main;
+      top: 3px;
+    }
+    .dp-calendar-nav-left,
+    .dp-calendar-nav-right{
+      &::before{
+        border-color: $main;
+      }
+    }
+  }
+
+}
+
+// calendar
+.dp-calendar-wrapper{
+  border-top: none;
+  padding: 10px;
+  .dp-weekdays{
+    .dp-calendar-weekday{
+      border: none;
+      font-size: 18px;
+      width: 35px;
+    }
+  }
+}
+
+
+.dp-calendar-day{
+  border-radius: 50%;
+  border: 2px solid transparent;
+  height: 35px !important;
+  width: 35px !important;
+  &:hover{
+    border-color: $main;
+  }
+  &.dp-current-day{
+    background-color: $grey;
+    color: $white;
+  }
+  &.dp-selected{
+    background-color: $main;
   }
 }

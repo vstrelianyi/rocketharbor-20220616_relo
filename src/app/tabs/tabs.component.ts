@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { GeneralService } from '../services/general.service';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { IDatePickerConfig } from 'ng2-date-picker';
 // import { DateRemoveEvent } from 'ngx-multiple-dates';
 
 @Component({
@@ -17,9 +18,10 @@ export class TabsComponent implements OnInit {
   isAccordionOpened: any = false;
   currentStep: number = 1;
 
-  datePickerConfig = {
+  datePickerConfig: IDatePickerConfig = {
     allowMultiSelect: true,
-    // firstDayOfWeek: 'mo' // ??? not working
+    drops: 'up',
+    firstDayOfWeek: 'mo'
   };
 
   // FORMS
@@ -153,7 +155,10 @@ export class TabsComponent implements OnInit {
   }
 
   onSelect( $event: any){
-    console.log($event)
+    // console.log($event, this.callFormControlStep1.value.selectedDates )
+    // const datesLength = this.callFormControlStep1.value.selectedDates.length;
+    // if( datesLength > 2){
+    // }
   }
 
   // dateChanged($event:any):void{

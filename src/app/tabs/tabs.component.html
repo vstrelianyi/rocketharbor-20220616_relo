@@ -70,14 +70,6 @@
 
                 <!-- [(ngModel)]="selectedDate" -->
 
-                <dp-date-picker
-                  class="input-date-picker"
-                  formControlName="selectedDates"
-                  [config]="datePickerConfig"
-                  (onSelect)="onSelect( $event )"
-                ></dp-date-picker>
-
-
                 <!-- <mat-form-field class="custom-style">
                   <ngx-multiple-dates
                     formControlName="selectedDates"
@@ -95,6 +87,13 @@
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field> -->
+
+              <dp-date-picker
+                class="input-date-picker"
+                formControlName="selectedDates"
+                [config]="datePickerConfig"
+                (onSelect)="onSelect( $event )"
+              ></dp-date-picker>
 
               </div>
 
@@ -275,6 +274,13 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field> -->
+
+                <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="moveDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker>
 
                 </div>
 
@@ -488,7 +494,6 @@
 
             <legend>General pricepoint or range</legend>
             <fieldset class="range">
-              <legend>General pricepoint or range</legend>
               <div class="fieldset-content">
                 <input
                   id="price-range-min"
@@ -532,6 +537,13 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field> -->
+
+                <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="moveDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker>
 
                 </div>
 
@@ -678,6 +690,13 @@
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field> -->
+
+                <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="selectedDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker>
 
               </div>
 
@@ -883,6 +902,13 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field> -->
+
+                <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="moveDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker>
 
                 </div>
 
