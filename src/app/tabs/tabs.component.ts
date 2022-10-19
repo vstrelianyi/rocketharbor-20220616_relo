@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { GeneralService } from '../services/general.service';
-import { DateRemoveEvent } from 'ngx-multiple-dates';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+// import { DateRemoveEvent } from 'ngx-multiple-dates';
 
 @Component({
   selector: 'app-tabs',
@@ -16,7 +16,11 @@ export class TabsComponent implements OnInit {
   tabList = [ 'call', 'message', 'meet']
   isAccordionOpened: any = false;
   currentStep: number = 1;
-  results: string[] = [];
+
+  datePickerConfig = {
+    allowMultiSelect: true,
+    // firstDayOfWeek: 'mo' // ??? not working
+  };
 
   // FORMS
   // callMorning: FormControl = new FormControl( false, [] ); // [ formValidator ]
@@ -148,15 +152,18 @@ export class TabsComponent implements OnInit {
 
   }
 
-  dateChanged($event:any):void{
-    const date: Date = $event.value;
-    const dateFormatted: string | null = this.pipe.transform(date, 'EEEE, MMMM d, y');
-    dateFormatted && this.results.push( dateFormatted );
-    // console.log( dateFormatted )
+  onSelect( $event: any){
+    console.log($event)
   }
-  dateRemoved(date: DateRemoveEvent<Date>): void {
+
+  // dateChanged($event:any):void{
+  //   const date: Date = $event.value;
+  //   const dateFormatted: string | null = this.pipe.transform(date, 'EEEE, MMMM d, y');
+  //   dateFormatted && this.results.push( dateFormatted );
+  // }
+  // dateRemoved(date: DateRemoveEvent<Date>): void {
     // console.log('removed', date);
-  }
+  // }
 
 }
 

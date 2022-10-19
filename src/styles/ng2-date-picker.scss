@@ -1,0 +1,19 @@
+@import './vars';
+
+.input-date-picker{
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+
+  >div{
+    width: 100%;
+    .dp-input-container{
+      input{
+        width: 100%;
+      }
+    }
+  }
+}

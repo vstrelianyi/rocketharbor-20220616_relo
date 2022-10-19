@@ -20,11 +20,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatNativeDateModule } from '@angular/material/core';
-import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
+// MATERIAL DESIGN
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatNativeDateModule } from '@angular/material/core';
+
+// import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
+
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule( {
   imports: [
@@ -37,11 +41,12 @@ import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
     FormsModule,
     ReactiveFormsModule,
 
-    MatDatepickerModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatNativeDateModule,
-    NgxMultipleDatesModule
+    DpDatePickerModule
+    // MatDatepickerModule,
+    // MatInputModule,
+    // MatFormFieldModule,
+    // MatNativeDateModule,
+    // NgxMultipleDatesModule
   ],
   declarations: [
     AppComponent,
@@ -58,8 +63,8 @@ import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
     TabsComponent,
   ],
   providers: [
-    MatDatepickerModule,
-    MatNativeDateModule,
+    // MatDatepickerModule,
+    // MatNativeDateModule,
   ],
   bootstrap: [AppComponent]
 })

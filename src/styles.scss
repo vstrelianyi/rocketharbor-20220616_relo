@@ -15,8 +15,12 @@
 @import './styles/custom-scrollbar-css';
 
 // material components
-@import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
-@import './styles/mat-datepicker';
+// @import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
+// @import './styles/mat-datepicker';
+
+// @import '~@angular/cdk/overlay-prebuilt.css';
+
+@import './styles/ng2-date-picker.scss';
 
 // layout
 @import './styles/section';

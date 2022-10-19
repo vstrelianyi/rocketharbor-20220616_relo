@@ -67,7 +67,18 @@
               <p>Pick 2-3 days that would be best</p>
 
               <div class="input-group group-datepicker">
-                <mat-form-field class="custom-style">
+
+                <!-- [(ngModel)]="selectedDate" -->
+
+                <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="selectedDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker>
+
+
+                <!-- <mat-form-field class="custom-style">
                   <ngx-multiple-dates
                     formControlName="selectedDates"
                     class="custom-multiple-dates"
@@ -83,7 +94,8 @@
                   </ngx-multiple-dates>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
+                </mat-form-field> -->
+
               </div>
 
             </div>
@@ -245,7 +257,8 @@
               <legend>General timeframe of move (month, week)</legend>
               <div class="fieldset-content">
                 <div class="input-group group-datepicker">
-                  <mat-form-field class="custom-style">
+
+                  <!-- <mat-form-field class="custom-style">
                     <ngx-multiple-dates
                       formControlName="moveDates"
                       class="custom-multiple-dates"
@@ -261,7 +274,8 @@
                     </ngx-multiple-dates>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  </mat-form-field> -->
+
                 </div>
 
               </div>
@@ -500,7 +514,8 @@
             <fieldset>
               <div class="fieldset-content">
                 <div class="input-group group-datepicker">
-                  <mat-form-field class="custom-style">
+
+                  <!-- <mat-form-field class="custom-style">
                     <ngx-multiple-dates
                       formControlName="moveDates"
                       class="custom-multiple-dates"
@@ -516,7 +531,8 @@
                     </ngx-multiple-dates>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  </mat-form-field> -->
+
                 </div>
 
               </div>
@@ -644,7 +660,8 @@
               <p>Pick 2-3 days that would be best</p>
 
               <div class="input-group group-datepicker">
-                <mat-form-field class="custom-style">
+
+                <!-- <mat-form-field class="custom-style">
                   <ngx-multiple-dates
                     formControlName="selectedDates"
                     class="custom-multiple-dates"
@@ -660,7 +677,8 @@
                   </ngx-multiple-dates>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
+                </mat-form-field> -->
+
               </div>
 
             </div>
@@ -847,7 +865,8 @@
             <fieldset>
               <div class="fieldset-content">
                 <div class="input-group group-datepicker">
-                  <mat-form-field class="custom-style">
+
+                  <!-- <mat-form-field class="custom-style">
                     <ngx-multiple-dates
                       formControlName="moveDates"
                       class="custom-multiple-dates"
@@ -863,7 +882,8 @@
                     </ngx-multiple-dates>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  </mat-form-field> -->
+
                 </div>
 
               </div>
