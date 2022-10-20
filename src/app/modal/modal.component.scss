@@ -45,6 +45,8 @@
     .modal-content{
       display: flex;
       flex: 1 0 auto;
+      box-shadow: none;
+      border: none;
     }
 
     button.modal-close-button{
