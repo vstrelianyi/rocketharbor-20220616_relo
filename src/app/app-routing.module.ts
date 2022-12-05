@@ -5,6 +5,7 @@ import { WhyReloComponent } from './why-relo/why-relo.component';
 import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.component';
 import { IllinoisLawComponent } from './illinois-law/illinois-law.component';
 import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.component';
+import { NeighborhoodComponent } from './neighborhood/neighborhood.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'illinois-law', component: IllinoisLawComponent },
   { path: 'why-chicagoland', component: WhyChicagolandComponent },
   { path: 'smart-search-map', component: SmartSearchMapComponent },
+  { path: 'neighborhood', component: NeighborhoodComponent },
 ]
 
 @NgModule({

@@ -24,6 +24,7 @@
     "ng2-date-picker": "^10.0.0",
     "ngx-multiple-dates": "^14.3.1",
     "rxjs": "~7.5.7",
+    "swiper": "^8.4.5",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.8"
   },

@@ -13,11 +13,12 @@ import { IDatePickerConfig } from 'ng2-date-picker';
 })
 
 export class TabsComponent implements OnInit {
-  pipe = new DatePipe('en-US');
   tabList = [ 'call', 'message', 'meet']
+
   isAccordionOpened: any = false;
   currentStep: number = 1;
 
+  pipe = new DatePipe('en-US');
   datePickerConfig: IDatePickerConfig = {
     allowMultiSelect: true,
     drops: 'up',
