@@ -10,19 +10,12 @@ import { DatePipe } from '@angular/common';
 })
 export class NeighborhoodComponent implements OnInit {
 
-  tabList = [ 'Market Trends', 'Demographics', 'Schools', 'Educations', 'Rent vs. Own', 'Local Businesses' ];
-
   tabListSchools = [ 'tab1', 'tab2', 'tab3', 'tab4', ];
 
   constructor(  public generalService: GeneralService ) {}
 
   ngOnInit(): void {
-    this.generalService.tab='Local Businesses';
     this.generalService.tabSchool='tab1';
-  }
-
-  selectTab(tab:any):void{
-    this.generalService.tab=tab;
   }
 
   selectSchoolTab(tab:any):void{

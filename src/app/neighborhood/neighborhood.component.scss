@@ -1,6 +1,7 @@
 @import '../../styles/vars';
 
-section.hero{
+// SECTIONS
+section.section-hero{
   background-color: $main;
 
   // layout
@@ -28,92 +29,65 @@ section.hero{
   }
 }
 
-section.charts{
-  padding: 50px 0;
-  .container{
+.sections{
+  >.container{
+    display: flex;
     flex-direction: column;
   }
+}
+
+section.section-demographics{
+  .row{
+    width: 100%;
+    .col{
+      flex-grow: 1;
+      align-items: center;
+    }
+  }
+}
+
+section.section-market-trends,
+section.section-schools,
+section.section-demographics,
+section.section-education,
+section.section-rent,
+section.section-businesses {
+  padding: 50px 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h3{
     text-align: center;
     font-size: 36px;
     margin-bottom: 50px;
   }
-  .chart-item{
+}
+
+section{
+  &.section-bordered{
+    padding-top: 22px;
+    border-top: solid 2px #b6b6b6;
+  }
+}
+
+
+// COMPONENTS
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border: solid 1px #b6b6b6;
+  li{
+    flex: 1 0 0;
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
-    .icon{
-      margin-right: 50px;
-    }
-    .chart{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      figcaption{
-        font-weight: 700;
-        margin-bottom: 15px;
-        font-size: 14px;
-      }
-    }
-  }
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
 
-}
-
-.tabs{
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  overflow: hidden;
-
-  .tabs-controls{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    border: solid 1px #b6b6b6;
-    box-shadow: 0px 7px 21px 0 rgba(0, 0, 0, 0.25);
-    li{
-      flex: 1 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      button{
-        color: #898989;
-        text-transform: uppercase;
-        padding: 10px 20px;
-      }
-      &.active{
-        button{
-          color: #000000;
-          font-weight: 900;
-        }
-      }
-    }
-  }
-  .tab{
-    padding: 50px 0;
-  }
-}
-
-table.table-schools{
-  // table-layout: fixed;
-  width: 100%;
-  font-size: 16px;
-  thead{
-    th:first-child{
-      text-align: left;
-    }
-    th{
-      padding: 10px 0px;
-    }
-  }
-  td{
-    padding: 10px 0;
-    &:nth-child(1){
-      white-space: nowrap;
-    }
-    &:not(:first-child){
-      text-align: center;
-    }
+    color: #898989;
+    text-transform: uppercase;
+    padding: 10px 20px;
   }
 }
 
@@ -170,47 +144,47 @@ table.table-schools{
   }
 }
 
-.tab-content{
-  padding: 0 0 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  .container{
+.chart-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  .icon{
+    margin-right: 50px;
+  }
+  .chart{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: nowrap;
-    border-top: solid 2px #b6b6b6;
-    padding-top: 20px;
-  }
-  h3{
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-  }
-
-  .widget{
-    display: flex;
-    img{
-      margin-right: 35px;
+    figcaption{
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 14px;
     }
-    .text{
-      display: flex;
-      flex-direction: column;
-      span:nth-child(1){
-        display: block;
-        font-size: 82px;
-        font-family: FreightSansProBlack;
-        line-height: 0.73;
-        letter-spacing: -3.28px;
-        color: #ffdd00;
-        margin-bottom: 15px;
-      }
-      span:nth-child(2){
-        font-size: 14px;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
+  }
+}
+
+.widget{
+  display: flex;
+  img{
+    margin-right: 35px;
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+    span:nth-child(1){
+      display: block;
+      font-size: 82px;
+      font-family: FreightSansProBlack;
+      line-height: 0.73;
+      letter-spacing: -3.28px;
+      color: #ffdd00;
+      margin-bottom: 15px;
+    }
+    span:nth-child(2){
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
     }
   }
 }

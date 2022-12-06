@@ -1,0 +1,22 @@
+table.table{
+  // table-layout: fixed;
+  width: 100%;
+  font-size: 16px;
+  thead{
+    th:first-child{
+      text-align: left;
+    }
+    th{
+      padding: 10px 0px;
+    }
+  }
+  td{
+    padding: 10px 0;
+    &:nth-child(1){
+      white-space: nowrap;
+    }
+    &:not(:first-child){
+      text-align: center;
+    }
+  }
+}

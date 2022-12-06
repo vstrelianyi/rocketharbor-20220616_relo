@@ -33,6 +33,7 @@ import { SwiperModule } from 'swiper/angular';
 
 import { DpDatePickerModule } from 'ng2-date-picker';
 import { SliderComponent } from './slider/slider.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule( {
   imports: [
@@ -69,6 +70,7 @@ import { SliderComponent } from './slider/slider.component';
     TabsComponent,
     NeighborhoodComponent,
     SliderComponent,
+    TableComponent,
   ],
   providers: [
     // MatDatepickerModule,

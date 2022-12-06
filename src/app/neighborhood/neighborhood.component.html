@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="section-hero">
 
   <div class="container">
     <h2 class="section-title">
@@ -16,224 +16,158 @@
 
 </section>
 
-<section class="map">
+<section class="section-map">
   <img src="./assets/images/search-map/map.png"/>
 </section>
 
-<div class="section-tabs">
+<div class="sections">
   <div class="container">
 
-    <div class="tabs">
-      <ul class="tabs-controls">
-        <li *ngFor="let tab of tabList" [ngClass]="{'active':generalService.tab === tab}">
-          <button (click)="selectTab(tab)">{{ tab }}</button>
-        </li>
-      </ul>
+    <ul class="nav-links">
+      <li>Market Trends</li>
+      <li>Demographics</li>
+      <li>Schools</li>
+      <li>Educations</li>
+      <li>Rent vs. Own</li>
+      <li>Yelp Reviews</li>
+    </ul>
 
-      <div class="tab">
+    <!-- MARKET TRENDS -->
+    <section class="section-market-trends">
+      <h3>Gold Coast <b>Market Trends</b></h3>
 
-        <!-- MARKET TRENDS -->
-        <ng-container *ngIf="generalService.tab==='Market Trends'">
-          <section class="charts">
-            <div class="container">
-
-              <h3>Gold Coast <b>Market Trends</b></h3>
-
-              <div class="chart-item">
-                <img class="icon" src="./assets/images/neighborhood/icons/calendar.png" alt="">
-                <figure class="chart">
-                  <img src="./assets/images/neighborhood/charts/chart1.png" alt="">
-                  <figcaption>Average Time on Market</figcaption>
-                </figure>
-
-              </div>
-
-              <div class="chart-item">
-                <img class="icon" src="./assets/images/neighborhood/icons/sold.png" alt="">
-                <figure class="chart">
-                  <img src="./assets/images/neighborhood/charts/chart2.png" alt="">
-                  <figcaption>Average Sales Price</figcaption>
-                </figure>
-              </div>
-
-              <div class="chart-item">
-                <img class="icon" src="./assets/images/neighborhood/icons/houses.png" alt="">
-                <figure class="chart">
-                  <img src="./assets/images/neighborhood/charts/chart3.png" alt="">
-                  <figcaption>Properties for Sale</figcaption>
-                </figure>
-              </div>
-
-            </div>
-
-          </section>
-        </ng-container>
-
-        <ng-container *ngIf="generalService.tab==='Demographics'">
-          <section class="tab-content">
-            <div class="container">
-              <h3>Gold Coast <b>Demographics</b></h3>
-              <div class="row">
-
-                <div class="col">
-                  <div class="widget">
-                    <img src="./assets/images/neighborhood/icons/people.png" alt="">
-                    <div class="text">
-                      <span>20K</span>
-                      <span>Total Individuals</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <div class="widget">
-                    <img src="./assets/images/neighborhood/icons/household-income.png" alt="">
-                    <div class="text">
-                      <span>$984K</span>
-                      <span>Household Income</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-        </ng-container>
-
-        <ng-container *ngIf="generalService.tab==='Schools'">
-          <section class="tab-content">
-            <h3>Gold Coast <b>Schools</b></h3>
-
-            <div class="tabs-schools">
-
-              <div class="top">
-                <div class="icon">
-                  <img src="./assets/images/neighborhood/icons/school.png" alt="">
-                </div>
-
-                <ul class="tabs-schools-controls">
-                  <li [ngClass]="{'active':generalService.tabSchool === 'tab1'}">
-                    <button (click)="selectSchoolTab('tab1')">
-                      <span>14</span>
-                      <span>PRESCHOOLS</span>
-                    </button>
-                  </li>
-                  <li [ngClass]="{'active':generalService.tabSchool === 'tab2'}">
-                    <button (click)="selectSchoolTab('tab2')">
-                      <span>12</span>
-                      <span>ELEMENTARY SCHOOLS</span>
-                    </button>
-                  </li>
-                  <li [ngClass]="{'active':generalService.tabSchool === 'tab3'}">
-                    <button (click)="selectSchoolTab('tab3')">
-                      <span>5</span>
-                      <span>MIDDLE SCHOOLS</span>
-                    </button>
-                  </li>
-                  <li [ngClass]="{'active':generalService.tabSchool === 'tab4'}">
-                    <button (click)="selectSchoolTab('tab4')">
-                      <span>5</span>
-                      <span>HIGH SCHOOLS</span>
-                    </button>
-                  </li>
-                </ul>
-
-              </div>
-
-              <div class="tabs">
-                <ng-container *ngIf="generalService.tabSchool==='tab1'">
-                  <div class="tab">
-                    <table class="table-schools">
-                      <thead>
-                        <tr>
-                          <th>SCHOOLS</th>
-                          <th>PHONE</th>
-                          <th>TYPE</th>
-                          <th>GRADES</th>
-                          <th>RATING</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Henry Winkelman ElementarySchool</td>
-                          <td>123-555-2424</td>
-                          <td>Public</td>
-                          <td>KG-5</td>
-                          <td><img src="./assets/images/neighborhood/icons/stars.png" alt=""></td>
-                        </tr>
-                        <tr>
-                          <td>Henry Winkelman ElementarySchool</td>
-                          <td>123-555-2424</td>
-                          <td>Public</td>
-                          <td>KG-5</td>
-                          <td><img src="./assets/images/neighborhood/icons/stars.png" alt=""></td>
-                        </tr>
-                        <tr>
-                          <td>Henry Winkelman ElementarySchool</td>
-                          <td>123-555-2424</td>
-                          <td>Public</td>
-                          <td>KG-5</td>
-                          <td><img src="./assets/images/neighborhood/icons/stars.png" alt=""></td>
-                        </tr>
-                        <tr>
-                          <td>Henry Winkelman ElementarySchool</td>
-                          <td>123-555-2424</td>
-                          <td>Public</td>
-                          <td>KG-5</td>
-                          <td><img src="./assets/images/neighborhood/icons/stars.png" alt=""></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </ng-container>
-                <ng-container *ngIf="generalService.tabSchool==='tab2'">
-                  <div class="tab">
-                    <h1>tab 2</h1>
-                  </div>
-                </ng-container>
-                <ng-container *ngIf="generalService.tabSchool==='tab3'">
-                  <div class="tab">
-                    <h1>tab 3</h1>
-                  </div>
-                </ng-container>
-                <ng-container *ngIf="generalService.tabSchool==='tab4'">
-                  <div class="tab">
-                    <h1>tab 4</h1>
-                  </div>
-                </ng-container>
-              </div>
-
-            </div>
-
-          </section>
-        </ng-container>
-
-        <ng-container *ngIf="generalService.tab==='Educations'">
-          <div class="tab-content">
-            <h3>Gold Coast <b>Education</b></h3>
-            <img width="50%" src="./assets/images/neighborhood/charts/pie-1.png" alt="">
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="generalService.tab==='Rent vs. Own'">
-          <div class="tab-content">
-            <h3>Gold Coast <b>Rent vs. Own</b></h3>
-            <img width="50%" src="./assets/images/neighborhood/charts/pie-2.png" alt="">
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="generalService.tab==='Local Businesses'">
-          <div class="tab-content">
-            <h3>Gold Coast <b>Local Businesses</b></h3>
-
-            <app-slider class="swiper-container"></app-slider>
-
-          </div>
-        </ng-container>
-
+      <div class="chart-item">
+        <img class="icon" src="./assets/images/neighborhood/icons/calendar.png" alt="">
+        <figure class="chart">
+          <img src="./assets/images/neighborhood/charts/chart1.png" alt="">
+          <figcaption>Average Time on Market</figcaption>
+        </figure>
 
       </div>
-    </div>
+
+      <div class="chart-item">
+        <img class="icon" src="./assets/images/neighborhood/icons/sold.png" alt="">
+        <figure class="chart">
+          <img src="./assets/images/neighborhood/charts/chart2.png" alt="">
+          <figcaption>Average Sales Price</figcaption>
+        </figure>
+      </div>
+
+      <div class="chart-item">
+        <img class="icon" src="./assets/images/neighborhood/icons/houses.png" alt="">
+        <figure class="chart">
+          <img src="./assets/images/neighborhood/charts/chart3.png" alt="">
+          <figcaption>Properties for Sale</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-demographics section-bordered">
+      <h3>Gold Coast <b>Demographics</b></h3>
+      <div class="row">
+        <div class="col">
+          <div class="widget">
+            <img src="./assets/images/neighborhood/icons/people.png" alt="">
+            <div class="text">
+              <span>20K</span>
+              <span>Total Individuals</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="widget">
+            <img src="./assets/images/neighborhood/icons/household-income.png" alt="">
+            <div class="text">
+              <span>$984K</span>
+              <span>Household Income</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-schools section-bordered">
+      <h3>Gold Coast <b>Schools</b></h3>
+
+      <div class="tabs-schools">
+
+        <div class="top">
+          <div class="icon">
+            <img src="./assets/images/neighborhood/icons/school.png" alt="">
+          </div>
+
+          <ul class="tabs-schools-controls">
+            <li [ngClass]="{'active':generalService.tabSchool === 'tab1'}">
+              <button (click)="selectSchoolTab('tab1')">
+                <span>14</span>
+                <span>PRESCHOOLS</span>
+              </button>
+            </li>
+            <li [ngClass]="{'active':generalService.tabSchool === 'tab2'}">
+              <button (click)="selectSchoolTab('tab2')">
+                <span>12</span>
+                <span>ELEMENTARY SCHOOLS</span>
+              </button>
+            </li>
+            <li [ngClass]="{'active':generalService.tabSchool === 'tab3'}">
+              <button (click)="selectSchoolTab('tab3')">
+                <span>5</span>
+                <span>MIDDLE SCHOOLS</span>
+              </button>
+            </li>
+            <li [ngClass]="{'active':generalService.tabSchool === 'tab4'}">
+              <button (click)="selectSchoolTab('tab4')">
+                <span>5</span>
+                <span>HIGH SCHOOLS</span>
+              </button>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="tabs">
+          <ng-container *ngIf="generalService.tabSchool==='tab1'">
+            <div class="tab">
+              <app-table></app-table>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="generalService.tabSchool==='tab2'">
+            <div class="tab">
+              <app-table></app-table>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="generalService.tabSchool==='tab3'">
+            <div class="tab">
+              <app-table></app-table>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="generalService.tabSchool==='tab4'">
+            <div class="tab">
+              <app-table></app-table>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="section-education section-bordered">
+      <h3>Gold Coast <b>Education</b></h3>
+      <img width="50%" src="./assets/images/neighborhood/charts/pie-1.png" alt="">
+    </section>
+
+    <section class="section-rent section-bordered">
+      <h3>Gold Coast <b>Rent vs. Own</b></h3>
+      <img width="50%" src="./assets/images/neighborhood/charts/pie-2.png" alt="">
+    </section>
+
+    <section class="section-businesses section-bordered">
+      <h3>Gold Coast <b>Local Businesses</b></h3>
+      <app-slider class="swiper-container"></app-slider>
+    </section>
 
   </div>
 </div>
