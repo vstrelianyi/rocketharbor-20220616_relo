@@ -17,7 +17,7 @@ export class NeighborhoodComponent implements OnInit {
   constructor(  public generalService: GeneralService ) {}
 
   ngOnInit(): void {
-    this.generalService.tab='Schools';
+    this.generalService.tab='Local Businesses';
     this.generalService.tabSchool='tab1';
   }
 
