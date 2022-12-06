@@ -178,14 +178,21 @@ section{
       margin-right: 50px;
     }
   }
-  .chart{
+  figure.chart{
     display: flex;
     flex-direction: column;
     align-items: center;
+    img{
+      width: 300px;
+      @media( min-width: 992px ){
+        width: 450px;
+      }
+    }
     figcaption{
       font-weight: 700;
       margin-bottom: 15px;
       font-size: 14px;
+
     }
   }
 }
