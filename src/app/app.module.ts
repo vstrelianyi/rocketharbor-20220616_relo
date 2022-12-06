@@ -21,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SwiperModule } from 'swiper/angular';
 
 // MATERIAL DESIGN
 // import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -32,8 +31,12 @@ import { SwiperModule } from 'swiper/angular';
 // import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
 
 import { DpDatePickerModule } from 'ng2-date-picker';
-import { SliderComponent } from './slider/slider.component';
 import { TableComponent } from './table/table.component';
+
+import { SwiperModule } from 'swiper/angular';
+// import { SliderComponent } from './slider/slider.component';
+
+import { SwiperOldComponent } from './swiper-old/swiper-old.component';
 
 @NgModule( {
   imports: [
@@ -69,8 +72,10 @@ import { TableComponent } from './table/table.component';
     ModalComponent,
     TabsComponent,
     NeighborhoodComponent,
-    SliderComponent,
     TableComponent,
+
+    SwiperOldComponent,
+    // SliderComponent,
   ],
   providers: [
     // MatDatepickerModule,
