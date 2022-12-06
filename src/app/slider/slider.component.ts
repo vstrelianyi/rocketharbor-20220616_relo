@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 
 import { SwiperComponent } from "swiper/angular";
-import SwiperCore, { Swiper, Virtual } from 'swiper';
+import SwiperCore, { Swiper, SwiperOptions, Virtual } from 'swiper';
 
 SwiperCore.use([Virtual ]);
 
@@ -24,7 +24,20 @@ export class SliderComponent implements OnInit {
   // onSlideChange() {
   //   console.log('slide change');
   // }
+
+  public swiperConfig = {
+    slidesPerView: 1,
+    spaceBetween: 38,
+    navigation: false,
+    breakpoints:{
+      992:{
+        slidesPerView: 5,
+      }
+    }
+  }
+
   @ViewChild( 'swiper', { static: false }) swiper?: SwiperComponent;
+
   slideNext(){
     this?.swiper?.swiperRef.slideNext(300);
   }

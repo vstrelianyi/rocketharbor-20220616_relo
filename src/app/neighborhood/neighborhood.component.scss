@@ -1,6 +1,9 @@
 @import '../../styles/vars';
 
 // SECTIONS
+section{
+  padding: 0;
+}
 section.section-hero{
   background-color: $main;
 
@@ -30,18 +33,31 @@ section.section-hero{
 }
 
 .sections{
+
+  padding: 50px 0;
   >.container{
     display: flex;
     flex-direction: column;
+  }
+  @media( min-width: 992px ){
+    padding: 0;
   }
 }
 
 section.section-demographics{
   .row{
     width: 100%;
+    flex-direction: column;
     .col{
       flex-grow: 1;
       align-items: center;
+      margin-bottom: 30px;
+    }
+    @media( min-width: 992px ){
+      flex-direction: row;
+      .col{
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -52,14 +68,11 @@ section.section-demographics,
 section.section-education,
 section.section-rent,
 section.section-businesses {
-  padding: 50px 0 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  h3{
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
+  @media( min-width: 992px ){
+    padding: 50px 0 100px;
   }
 }
 
@@ -70,10 +83,13 @@ section{
   }
 }
 
-
+// ------------
 // COMPONENTS
+// ------------
+
+// NAV LINKS
 .nav-links{
-  display: flex;
+  display: none;
   justify-content: space-around;
   width: 100%;
   border: solid 1px #b6b6b6;
@@ -89,8 +105,12 @@ section{
     text-transform: uppercase;
     padding: 10px 20px;
   }
+  @media( min-width: 992px ){
+    display: flex;
+  }
 }
 
+// TABS CONTROLS
 .tabs-schools{
   display: flex;
   flex-direction: column;
@@ -144,13 +164,19 @@ section{
   }
 }
 
-
+// CHART ITEM
 .chart-item{
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  flex-direction: column;
+  @media( min-width: 992px ){
+    flex-direction: row;
+  }
   .icon{
-    margin-right: 50px;
+    @media( min-width: 992px ){
+      margin-right: 50px;
+    }
   }
   .chart{
     display: flex;
@@ -164,14 +190,27 @@ section{
   }
 }
 
+// WIDGET
 .widget{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media( min-width: 992px ){
+    flex-direction: row;
+  }
   img{
-    margin-right: 35px;
+    margin-bottom: 20px;
+    width: 125px;
+    height: 89px;
+    @media( min-width: 992px ){
+      margin-right: 35px;
+    }
   }
   .text{
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     span:nth-child(1){
       display: block;
       font-size: 82px;
@@ -179,7 +218,7 @@ section{
       line-height: 0.73;
       letter-spacing: -3.28px;
       color: #ffdd00;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     span:nth-child(2){
       font-size: 14px;
@@ -188,3 +227,49 @@ section{
     }
   }
 }
+
+// ACCORDION
+label.accordion-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  h3{
+    text-align: center;
+    font-size: 36px;
+
+  }
+  .icon{
+    width: 30px;
+    height: 30px;
+  }
+  @media( min-width: 992px ){
+    margin-bottom: 20px;
+    justify-content: center;
+    pointer-events: none;
+    .icon{
+      display: none;
+    }
+  }
+}
+
+.content{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0;
+  @media( min-width: 992px ){
+    display: flex;
+  }
+}
+input[type="checkbox"]{
+  display: none;
+}
+input[type="checkbox"]:checked~.content{
+  display: flex;
+}
+input[type="checkbox"]:checked~.accordion-title>.icon{
+  transform: rotate( 90deg );
+}
+
