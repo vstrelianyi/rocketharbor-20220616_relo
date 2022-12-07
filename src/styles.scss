@@ -1,3 +1,5 @@
+@import '~swiper/swiper-bundle';
+
 @import './styles/reset';
 @import './styles/vars';
 @import './styles/fonts';
@@ -32,3 +34,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.swiper-wrapper{
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
+  }
+}
