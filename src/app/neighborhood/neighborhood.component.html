@@ -24,16 +24,16 @@
   <div class="container">
 
     <ul class="nav-links">
-      <li>Market Trends</li>
-      <li>Demographics</li>
-      <li>Schools</li>
-      <li>Educations</li>
-      <li>Rent vs. Own</li>
-      <li>Yelp Reviews</li>
+      <li><a (click)="onClick('trends')">Market Trends</a></li>
+      <li><a (click)="onClick('demographics')">Demographics</a></li>
+      <li><a (click)="onClick('schools')">Schools</a></li>
+      <li><a (click)="onClick('education')">Education</a></li>
+      <li><a (click)="onClick('rent')">Rent vs. Own</a></li>
+      <li><a (click)="onClick('businesses')">Yelp Reviews</a></li>
     </ul>
 
     <!-- MARKET TRENDS -->
-    <section class="section-market-trends">
+    <section class="section-market-trends" id="trends">
 
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-1" name="section-1">
@@ -70,7 +70,7 @@
 
     </section>
 
-    <section class="section-demographics section-bordered">
+    <section class="section-demographics section-bordered" id="demographics">
 
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-2" name="section-2">
@@ -105,7 +105,7 @@
 
     </section>
 
-    <section class="section-schools section-bordered">
+    <section class="section-schools section-bordered" id="schools">
 
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-3" name="section-3">
@@ -181,7 +181,7 @@
 
     </section>
 
-    <section class="section-education section-bordered">
+    <section class="section-education section-bordered" id="education">
 
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-4" name="section-4">
@@ -196,7 +196,7 @@
 
     </section>
 
-    <section class="section-rent section-bordered">
+    <section class="section-rent section-bordered" id="rent">
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-5" name="section-5">
       <label class="accordion-title" for="section-5">
@@ -210,7 +210,7 @@
 
     </section>
 
-    <section class="section-businesses section-bordered">
+    <section class="section-businesses section-bordered" id="businesses">
       <!-- ACCORDION ITEM -->
       <input type="checkbox" id="section-6" name="section-6">
       <label class="accordion-title" for="section-6">
