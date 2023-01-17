@@ -22,6 +22,18 @@ section.map{
   flex-direction: column;
 }
 
+section.hero-2{
+  background-color: #101010;
+  padding: 50px 0;
+  background-image: url('../../assets/images/search-map/bg.png');
+  background-size: cover;
+
+  p{
+    color: $white;
+  }
+}
+
+
 .map-filters{
   display: flex;
   column-gap: 20px;
@@ -42,7 +54,6 @@ section.map{
       margin-bottom: 0px;
     }
   }
-
 }
 
 .ng-select-custom{
@@ -88,15 +99,3 @@ section.map{
     align-items: center;
   }
 }
-
-section.hero-2{
-  background-color: #101010;
-  padding: 50px 0;
-  background-image: url('../../assets/images/search-map/bg.png');
-  background-size: cover;
-
-  p{
-    color: $white;
-  }
-}
-
