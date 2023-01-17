@@ -77,12 +77,4 @@ export class GoogleMapsComponent implements AfterViewInit, OnInit {
       }, this.callback
     );
   }
-
-
-  // display: any;
-  // center: google.maps.LatLngLiteral = {
-  //     lat: 40.73487536535739,
-  //     lng: -73.98929919020333
-  // };
-  // zoom = 14;
 }
