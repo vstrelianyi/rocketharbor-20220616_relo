@@ -37,6 +37,8 @@ import { SwiperModule } from 'swiper/angular';
 // import { SliderComponent } from './slider/slider.component';
 
 import { SwiperOldComponent } from './swiper-old/swiper-old.component';
+import { GoogleMapsModule } from "@angular/google-maps";
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 @NgModule( {
   imports: [
@@ -56,7 +58,9 @@ import { SwiperOldComponent } from './swiper-old/swiper-old.component';
     // MatNativeDateModule,
     // NgxMultipleDatesModule
 
-    SwiperModule
+    SwiperModule,
+    GoogleMapsModule
+
   ],
   declarations: [
     AppComponent,
@@ -75,6 +79,7 @@ import { SwiperOldComponent } from './swiper-old/swiper-old.component';
     TableComponent,
 
     SwiperOldComponent,
+      GoogleMapsComponent,
     // SliderComponent,
   ],
   providers: [

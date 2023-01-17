@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 
-import SwiperCore from 'swiper/core';
+import SwiperCore from 'swiper';
 
 @Component({
   selector: 'app-swiper-old',

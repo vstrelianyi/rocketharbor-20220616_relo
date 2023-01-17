@@ -131,9 +131,11 @@ export class TabsComponent implements OnInit {
     this.generalService.tab=tab;
     this.isAccordionOpened=false;
   }
+
   changeStep( newStep: number ):void{
     this.currentStep=newStep;
   }
+
   toggleAccordion(): void{
     this.isAccordionOpened = !this.isAccordionOpened;
   }
