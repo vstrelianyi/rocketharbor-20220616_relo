@@ -16,18 +16,20 @@ export class GoogleMapsComponent implements AfterViewInit, OnInit {
 
   selectedRegion: number = 0;
   regions= [
-    { id: 0, region: 'Chicago' },
-    { id: 1, region: 'NY' },
-    { id: 2, region: 'Washington' },
-    { id: 3, region: 'Seattle ' },
+    { id: 0, region: 'Chicago', lat: 55.930385, lng: -3.118425 },
+    { id: 1, region: 'NY', lat: 4, lng: 12 },
+    { id: 2, region: 'Washington', lat: 50.087692, lng: 14.421150 },
+    { id: 3, region: 'Kyiv ', lat: 50.487033383161226, lng: 30.46568599818268 },
   ];
 
   selectedNeighborhood: number = 0;
   neighborhoods= [
-    { id: 0, neighborhood: 'Avondale' },
-    { id: 1, neighborhood: 'Beverly' },
-    { id: 2, neighborhood: 'Bridgeport' },
-    { id: 3, neighborhood: 'Brighton Park' },
+    { id: 0, neighborhood: 'Avondale', lat: 50.087692, lng: 14.421150 },
+    { id: 1, neighborhood: 'Beverly', lat: 55.930385, lng: -3.118425 },
+    { id: 2, neighborhood: 'Bridgeport', lat: 55.930385, lng: -3.118425 },
+    { id: 3, neighborhood: 'Brighton Park', lat: 55.930385, lng: -3.118425 },
+    { id: 4, neighborhood: 'NY', lat: 40.80403886829473, lng: -73.62606451318769 },
+
   ];
 
   destinationDistance: string | null = null;
@@ -50,29 +52,24 @@ export class GoogleMapsComponent implements AfterViewInit, OnInit {
   }
 
   callback = ( response: any, status: any ): void => {
-    console.log(response, status)
-    console.log(this)
+    // console.log(response, status)
     if( status === 'OK'){
-      // console.log( response.rows[0].elements[0].distance.text, response.rows[0].elements[0].duration.text );
-      this.destinationDistance = response.rows[0].elements[0].distance.text;
-      this.destinationDuration = response.rows[0].elements[0].duration.text;
+      if( response.rows[0].elements[0].status === 'OK'){ // check if path exists
+        this.destinationDistance = response.rows[0].elements[0].distance.text;
+        this.destinationDuration = response.rows[0].elements[0].duration.text;
+      }
     }
   }
 
-    // google destination request params
-    apiKey="AIzaSyA0-a41lTXpAx99Yish46Xukhy-M4OFFC8";
-    units="metric";
-
-    origin= new google.maps.LatLng( 55.930385, -3.118425 );
-    destination = new google.maps.LatLng( 50.087692, 14.421150 );
-
-    service = new google.maps.DistanceMatrixService();
-
+  service = new google.maps.DistanceMatrixService();
   async onClick(): Promise<void>{
+    const origin= new google.maps.LatLng( this.regions[ this.selectedRegion ].lat, this.regions[ this.selectedRegion ].lng );
+    const destination = new google.maps.LatLng( this.neighborhoods[ this.selectedNeighborhood ].lat, this.neighborhoods[ this.selectedNeighborhood ].lng );
+
     this.service.getDistanceMatrix(
       {
-        origins: [ this.origin ],
-        destinations: [ this.destination ],
+        origins: [ origin ],
+        destinations: [ destination ],
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.METRIC,
         avoidHighways: false,
