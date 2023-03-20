@@ -1,0 +1,21 @@
+<div
+  class="chart"
+  style="display: block;"
+>
+  <canvas
+    *ngIf="!isLoading && chartData.datasets[0].data.length"
+    baseChart
+    width="400"
+    height="400"
+    [data]="chartData"
+    [options]="chartOptions"
+    [legend]="lineChartLegend"
+    [type]="chartType"
+  >
+  </canvas>
+  <div *ngIf="isLoading" class="loading">Loading data</div>
+  <span *ngIf="!isLoading && !chartData.datasets[0].data.length">No chart data</span>
+  <!-- <button (click)="randomize()">Update</button> -->
+</div>
+
+<!-- [type]="'line'" -->

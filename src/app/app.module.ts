@@ -20,7 +20,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 // MATERIAL DESIGN
 // import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -39,6 +39,8 @@ import { SwiperModule } from 'swiper/angular';
 import { SwiperOldComponent } from './swiper-old/swiper-old.component';
 import { GoogleMapsModule } from "@angular/google-maps";
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule( {
   imports: [
@@ -59,7 +61,11 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
     // NgxMultipleDatesModule
 
     SwiperModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+
+    NgChartsModule,
+
+		HttpClientModule
 
   ],
   declarations: [
@@ -79,7 +85,8 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
     TableComponent,
 
     SwiperOldComponent,
-      GoogleMapsComponent,
+		GoogleMapsComponent,
+    ChartComponent,
     // SliderComponent,
   ],
   providers: [
