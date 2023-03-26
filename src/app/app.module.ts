@@ -39,8 +39,11 @@ import { SwiperModule } from 'swiper/angular';
 import { SwiperOldComponent } from './swiper-old/swiper-old.component';
 import { GoogleMapsModule } from "@angular/google-maps";
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
-import { NgChartsModule } from 'ng2-charts';
+// import { NgChartsModule } from 'ng2-charts'; // ng 15
+import { ChartsModule } from 'ng2-charts'; // ng 10
 import { ChartComponent } from './chart/chart.component';
+import { ChartPieComponent } from './chart-pie/chart-pie.component';
+import { ChartLineComponent } from './chart-line/chart-line.component';
 
 @NgModule( {
   imports: [
@@ -63,7 +66,8 @@ import { ChartComponent } from './chart/chart.component';
     SwiperModule,
     GoogleMapsModule,
 
-    NgChartsModule,
+    // NgChartsModule, // ng 15
+    ChartsModule, // ng 10
 
 		HttpClientModule
 
@@ -87,6 +91,8 @@ import { ChartComponent } from './chart/chart.component';
     SwiperOldComponent,
 		GoogleMapsComponent,
     ChartComponent,
+    ChartPieComponent,
+    ChartLineComponent,
     // SliderComponent,
   ],
   providers: [

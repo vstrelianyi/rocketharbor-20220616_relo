@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChanges, OnChanges, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartOptions, ChartType, } from "chart.js";
+// https://www.npmjs.com/package/ng2-charts/v/2.4.3
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -22,12 +23,20 @@ export class ChartComponent {
         tension: 0.4
       }
     },
-    // We use these empty structures as placeholders for dynamic theming.
     scales: {
-      x: {},
-      y: {
-        min: 10
-      }
+      // new version
+      // x: {},
+      // y: {
+      //   min: 10
+      // }
+
+
+      // old version
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
     },
     plugins: {
       legend: {
@@ -66,40 +75,26 @@ export class ChartComponent {
 
   ngOnChanges( changes: SimpleChanges ) {
     const { data: { currentValue } } = changes;
-    // console.log( this.chartType, currentValue)
+    console.log( this.chartType, currentValue)
     console.log(this.chartData);
 
-    if( !currentValue ) return;
+    if( !currentValue || !this.chartType ) return;
     this.isLoading = false;
-
     switch( this.chartType ){
       case 'line': {
         const labels = Object.keys( currentValue );
         const values = Object.values( currentValue );
-        // const newChartData = JSON.parse( JSON.stringify(this.chartData) );
-        // newChartData.labels = labels;
-        // newChartData.datasets[0].data = values;
-        // newChartData.datasets[0].label = this.label;
-
-        // newChartData.datasets[0].fill = true;
-        // newChartData.datasets[0].tension = 0.5;
-        // newChartData.datasets[0].borderColor = '#FFE000';
-        // newChartData.datasets[0].backgroundColor = 'transparent';
-
         this.chartData ={
           labels: labels,
           datasets: [ {
-            //@ts-ignore
             data: values,
             fill : true,
-            tension : 0.5,
+            // tension : 0.5,
             borderColor : '#FFE000',
             backgroundColor : 'transparent',
             label: this.label
           } ]
         }
-
-        // this.chartData = newChartData;
         break;
       }
       case 'pie': {
@@ -117,16 +112,6 @@ export class ChartComponent {
 
       }
     }
-
-
-    // console.log(newChartData)
-
-
     // this.chart?.update();
   }
-
-  // public randomize(): void {
-  //   this.chartType = this.chartType === 'bar' ? 'line' : 'bar';
-  // }
-
 }
