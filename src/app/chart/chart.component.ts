@@ -7,6 +7,7 @@ import { BaseChartDirective } from 'ng2-charts';
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
+
 export class ChartComponent {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
@@ -67,7 +68,6 @@ export class ChartComponent {
   ngOnChanges( changes: SimpleChanges ) {
     const { data: { currentValue } } = changes;
     // console.log( this.chartType, currentValue)
-    console.log(this.chartData);
 
     if( !currentValue ) return;
     this.isLoading = false;

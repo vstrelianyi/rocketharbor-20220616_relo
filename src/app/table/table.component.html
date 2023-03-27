@@ -11,39 +11,11 @@
   </div>
 
   <div class="tbody">
-    <div class="trow">
-      <div class="td">Henry Winkelman ElementarySchool</div>
-      <div class="td">123-555-2424</div>
-      <div class="td">Public</div>
-      <div class="td">KG-5</div>
-      <div class="td"><img src="./assets/images/neighborhood/icons/stars.png" alt=""></div>
-    </div>
-    <div class="trow">
-      <div class="td">Henry Winkelman ElementarySchool</div>
-      <div class="td">123-555-2424</div>
-      <div class="td">Public</div>
-      <div class="td">KG-5</div>
-      <div class="td"><img src="./assets/images/neighborhood/icons/stars.png" alt=""></div>
-    </div>
-    <div class="trow">
-      <div class="td">Henry Winkelman ElementarySchool</div>
-      <div class="td">123-555-2424</div>
-      <div class="td">Public</div>
-      <div class="td">KG-5</div>
-      <div class="td"><img src="./assets/images/neighborhood/icons/stars.png" alt=""></div>
-    </div>
-    <div class="trow">
-      <div class="td">Henry Winkelman ElementarySchool</div>
-      <div class="td">123-555-2424</div>
-      <div class="td">Public</div>
-      <div class="td">KG-5</div>
-      <div class="td"><img src="./assets/images/neighborhood/icons/stars.png" alt=""></div>
-    </div>
-    <div class="trow">
-      <div class="td">Henry Winkelman ElementarySchool</div>
-      <div class="td">123-555-2424</div>
-      <div class="td">Public</div>
-      <div class="td">KG-5</div>
+    <div *ngFor="let row of rows" class="trow">
+      <div class="td">{{ row }}</div>
+      <div class="td"></div>
+      <div class="td"></div>
+      <div class="td"></div>
       <div class="td"><img src="./assets/images/neighborhood/icons/stars.png" alt=""></div>
     </div>
   </div>
