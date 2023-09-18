@@ -23,6 +23,7 @@
     "@angular/router": "^15.1.0",
     "@ng-select/ng-select": "^10.0.3",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "luxon": "^3.4.3",
     "ng2-charts": "^4.1.1",
     "ng2-date-picker": "^15.0.1",
     "ngx-multiple-dates": "^14.3.1",

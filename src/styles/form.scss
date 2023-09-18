@@ -3,6 +3,7 @@
 form{
   margin-bottom: 20px;
   font-family: 'FreightSansProBook';
+  font-size: 15px;
 
   .line{
     width: 100%;
@@ -31,13 +32,13 @@ form{
   legend{
     margin-bottom: 40px;
     flex: 1 0 100%;
-    margin: 20px 0;
+    margin: 15px 0;
     font-weight: 700;
-    font-size: 24px;
+    // font-size: 24px;
     font-family: 'FreightSansProSemibold';
     letter-spacing: -1px;
     @media( min-width: 600px ){
-      font-size: 30px;
+      // font-size: 30px;
     }
   }
 
@@ -47,21 +48,21 @@ form{
     font-family: inherit;
 
     label{
-      font-size: 24px;
+      // font-size: 24px;
       @media( min-width: 600px ){
-        font-size: 36px;
+        // font-size: 36px;
       }
     }
 
     input.input-text{
       font-family: 'FreightSansProBook';
-      border: 2px solid $grey1;
+      border: 1px solid $grey1;
       border-radius: 6px;
       height: 40px;
       padding: 0 10px;
-      font-size: 16px;
+      // font-size: 16px;
       @media( min-width: 600px ){
-        font-size: 24px;
+        // font-size: 24px;
       }
       &:focus{
         border-color: $yellow;
@@ -72,12 +73,12 @@ form{
       border: 1px solid $grey1;
       border-radius: 6px;
       padding: 15px 10px;
-      font-size: 16px;
       font-family: 'FreightSansProBook';
       height: 163px;
       width: 100%;
+      // font-size: 16px;
       @media( min-width: 600px ){
-        font-size: 24px;
+        // font-size: 24px;
         padding: 24px 16px;
       }
       &:focus{
@@ -89,17 +90,17 @@ form{
     .fieldset-content{
       display: flex;
       flex-wrap: wrap;
-      padding: 10px 0;
+      // padding: 10px 0;
       &.bordered{
         border-top: 2px solid $grey1;
       }
       p{
-        font-size: 20px;
+        // font-size: 20px;
         margin: 0;
         margin-bottom: 20px;
         font-family: 'FreightSansProBook';
         @media( min-width: 600px ){
-          font-size: 30px;
+          // font-size: 30px;
         }
       }
       .input-group{
@@ -120,11 +121,11 @@ form.form-contact-info{
     margin-bottom: 30px;
 
     .fieldset-content{
-      row-gap: 40px;
+      row-gap: 10px;
       column-gap: 16px;
       .input-text{
         flex: 0 1 100%;
-        height: 62px;
+        // height: 62px;
         @media( min-width: 600px ){
           flex: 0 1 calc( 50% - 8px );
         }
@@ -142,9 +143,9 @@ form.form-contact-info{
         flex-wrap: wrap;
         gap: 10px;
         p{
-          font-size: 16px;
+          // font-size: 16px;
           @media( min-width: 600px ){
-            font-size: 24px;
+            // font-size: 24px;
           }
           margin: 0;
         }
@@ -159,7 +160,7 @@ form.form-contact-info{
         textarea{
         }
         p{
-          font-size: 12px;
+          // font-size: 12px;
         }
       }
 

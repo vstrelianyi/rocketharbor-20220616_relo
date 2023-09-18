@@ -1,0 +1,503 @@
+<ul class="tabs-controls">
+  <li *ngFor="let tab of tabList" [ngClass]="{'active':generalService.tab === tab}">
+    <button (click)="selectTab(tab)">{{ tab }}</button>
+  </li>
+</ul>
+
+<div class="tab">
+
+  <!-- TAB: CALL -->
+  <ng-container *ngIf="generalService.tab==='call'">
+
+    <!-- CALL: STEP 1 -->
+    <div *ngIf="isWorkingHours===true" class="flex flex-col w-full">
+      <div class="recommended-office" *ngIf="recommendedOffice && generalService.showRecommendedComponent">
+        <img class="image-manager" src="https://bwcontentserver.z19.web.core.windows.net/content/Manager Circle Headshots/Circle Headshots_Color_{{recommendedOffice.abbreviationCode}}.png" alt="slide-1">
+        <span class="font-[700] text-[20px] md:text-[23px]">Connect with {{recommendedOffice.headshotName}}</span>
+      </div>
+
+      <div class="w-full flex items-center justify-start p-[22px]" *ngIf="!recommendedOffice || !generalService.showRecommendedComponent">
+        <svg class="mr-[20px]" xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+          <path d="M13.1251 17.375C13.1251 17.375 13.3126 17.5625 14.8126 19.0625C16.1251 20.375 18.0001 20 18.9376 19.0625C19.8751 18.125 21.3751 17.9375 22.5001 18.5C23.6251 19.0625 26.0626 20.75 27.0001 21.6875C27.9376 22.4375 28.8751 23.5625 28.5001 25.25C27.9376 27.125 25.5001 29 24.1876 29.1875C18.5626 29.75 13.1251 26.375 8.81255 22.0625C4.31255 17.5625 0.937555 11.9375 1.50005 6.31248C1.68755 4.99998 3.56256 2.56248 5.43756 1.99998C7.12505 1.43748 8.25005 2.56248 9.00005 3.49998C9.75005 4.43748 11.4376 6.87498 12.0001 7.99998C12.5626 9.12498 12.3751 10.625 11.4376 11.5625C10.5001 12.5 9.93755 14.375 11.4376 15.6875C12.7501 17.1875 13.1251 17.375 13.1251 17.375Z" fill="black"/>
+        </svg>
+        <span class="button button-call font-[700] text-[23px]">Connect with us.</span>
+      </div>
+
+      <div class="w-full bg-black px-[22px] py-[18px]">
+        <a href="tel:{{ contactCellPhone }}" class="button button-call">Call now</a>
+      </div>
+    </div>
+
+    <div *ngIf="isWorkingHours===false">
+      <div *ngIf="currentStep===1" class="step step-1">
+
+        <div class="top mb-[15px]">
+          <div class="hightlighed">
+            <p><b>We love that you want to talk with us.</b></p>
+            <p>Please provide us your phone number and we will give you a call right back during regular business hours.</p>
+            <b>{{contactCellPhone}}</b>
+          </div>
+        </div>
+
+        <div class="main">
+
+          <!-- <button class="bg-slate-200 border mb-[20px]" (click)="getFormValues()">Get form values</button> -->
+
+          <form action="" [formGroup]="callFormControlStep1">
+            <legend>Schedule a Call</legend>
+
+            <fieldset class="bordered mb-[42px]">
+              <p class="w-[100%] mb-[10px]"><b>Pick the time of day the best works for you</b> (up to 2).*</p>
+
+              <div class="columns grid-cols-3 gap-x-[20px]">
+                <div class="input-group">
+                  <input
+                    id="call-morning"
+                    type="checkbox"
+                    class="custom-checkbox"
+                    formControlName="callMorning"
+                    (change)="updateCheckboxSelection('callMorning')"
+                    />
+                    <!-- name="call-morning" -->
+                    <!-- [formControl]="callMorning" -->
+                  <label for="call-morning">Morning</label>
+                </div>
+
+                <div class="input-group">
+                  <input
+                    id="call-afternoon"
+                    type="checkbox"
+                    class=" custom-checkbox"
+                    formControlName="callAfternoon"
+                    (change)="updateCheckboxSelection('callAfternoon')"
+                    />
+                    <!-- name="call-afternoon" -->
+                    <!-- [formControl]="callAfternoon" -->
+                  <label for="call-afternoon">Afternoon</label>
+                </div>
+
+                <div class="input-group">
+                  <input
+                    id="call-evening"
+                    type="checkbox"
+                    class="custom-checkbox"
+                    formControlName="callEvening"
+                    (change)="updateCheckboxSelection('callEvening')"
+                    />
+                    <!-- name="call-evening" -->
+                    <!-- [formControl]="callEvening" -->
+                  <label for="call-evening">Evening</label>
+                </div>
+              </div>
+
+              <div *ngIf="callFormControlStep1.hasError('tooManySelected')">
+                <span class="text-red-600 text-[14px]">You can only select a maximum of two checkboxes in the Call Form.</span>
+              </div>
+
+            </fieldset>
+
+            <fieldset class="bordered">
+              <p class="mb-[10px]">Pick 2-3 days that would be best</p>
+
+              <div class="input-group justify-center">
+                <!-- <app-datepicker [onDateSelect]="onDateSelect" [preSelectedDates]="formSelectedDatesCall"></app-datepicker> -->
+              </div>
+
+            </fieldset>
+
+          </form>
+
+        </div>
+        <div class="bottom">
+          <button
+            class="button button-step"
+            (click)="changeStep(2)"
+          >Next</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CALL: STEP 2 -->
+    <div *ngIf="currentStep===2" class="step step-2">
+      <div class="top">
+        <button class="step-back-button" (click)="changeStep(1)">Back</button>
+
+        <form class="form-contact-info" [formGroup]="callFormControlStep2" action="">
+
+          <legend>Schedule a Call</legend>
+
+          <div class="hightlighed mb-[15px]">
+            <div class="results">
+              <p>You've selected:</p>
+              <span class="notification" *ngIf="this.callFormControlStep1.value.selectedDates.length === 0">Nothing selected</span>
+              <div class="results-row" *ngFor="let date of this.callFormControlStep1.value.selectedDates">
+                <span class="date">{{ this.pipe.transform(date, 'EEEE, MMMM d, y') }}
+                  {{ this.callFormControlStep1.value.callMorning ? ', Morning' : null }}
+                  {{ this.callFormControlStep1.value.callAfternoon ? ', Afternoon' : null }}
+                  {{ this.callFormControlStep1.value.callEvening ? ', Evening' : null }}
+                </span>
+              </div>
+              <button class="step-back-button" (click)="changeStep(1)">Edit</button>
+            </div>
+          </div>
+
+          <legend class="text-[19px]">Fill out your contact info</legend>
+          <fieldset>
+
+            <span class="text-[15px] mb-[10px]"><b>Name*</b></span>
+            <input
+              id="first-name"
+              formControlName="firstName"
+              type="text"
+              class="input-text mb-[10px]"
+              placeholder="First Name"
+            />
+            <input
+              id="last-name"
+              formControlName="lastName"
+              type="text"
+              class="input-text mb-[15px] "
+              placeholder="Last Name"
+            />
+
+            <span class="text-[15px] mb-[10px]"><b>Email*</b></span>
+            <input
+              id="email"
+              formControlName="email"
+              type="email"
+              class="input-text mb-[15px]"
+              placeholder="Email"
+            />
+
+            <span class="text-[15px] mb-[10px]"><b>Phone*</b></span>
+            <input
+              id="phone"
+              formControlName="phone"
+              type="text"
+              class="input-text mb-[15px]"
+              placeholder="Phone"
+            />
+
+            <span class="text-[15px] mb-[10px]"><b>Message</b></span>
+            <div class="input-group-textarea">
+              <textarea
+                formControlName="message"
+                id="text-area-message"
+                placeholder="Write here"
+              ></textarea>
+              <p class="text-[12px]">Max 400 characters</p>
+            </div>
+          </fieldset>
+
+        </form>
+
+      </div>
+
+      <div class="main">
+        </div>
+      <div class="bottom">
+        <button
+          class="button button-step"
+          (click)="sendForm( 'callForm' )"
+        >Schedule a call</button>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <!-- TAB: MESSAGE -->
+  <ng-container *ngIf="generalService.tab==='message'">
+
+    <!-- MESSAGE: STEP 1 -->
+    <div *ngIf="currentStep===1" class="step step-1">
+      <div class="top">
+      </div>
+      <div class="main">
+
+        <form class="form-contact-info" [formGroup]="messageFormControlStep1" action="">
+
+          <legend class="text-[19px]">Fill out your contact info</legend>
+          <fieldset class="mb-[20px]">
+
+            <span class="text-[15px] mb-[10px]"><b>Name*</b></span>
+            <input
+              id="first-name"
+              formControlName="firstName"
+              type="text"
+              class="input-text mb-[10px]"
+              placeholder="First Name"
+            />
+            <input
+              id="last-name"
+              formControlName="lastName"
+              type="text"
+              class="input-text mb-[15px]"
+              placeholder="Last Name"
+              />
+
+            <span class="text-[15px] mb-[10px]"><b>Email*</b></span>
+            <input
+              id="email"
+              formControlName="email"
+              type="email"
+              class="input-text mb-[15px]"
+              placeholder="Email"
+            />
+
+            <span class="text-[15px] mb-[10px]"><b>Phone*</b></span>
+            <input
+              id="phone"
+              formControlName="phone"
+              type="text"
+              class="input-text"
+              placeholder="Phone"
+            />
+          </fieldset>
+
+          <fieldset class="flex flex-row flex-wrap">
+            <p class="w-[100%] mb-[20px] text-[15px]">I prefer to be contacted by:</p>
+
+            <div class="input-group w-[50%]">
+              <input
+                id="contact-method-texting"
+                formControlName="contactMethodTexting"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="contact-method-texting">Texting</label>
+            </div>
+
+            <div class="input-group w-[50%]">
+              <input
+                id="contact-method-email"
+                formControlName="contactMethodEmail"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="contact-method-email">Email</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <span class="text-[15px] mt-[15px] mb-[10px]"><b>Message</b></span>
+            <div class="input-group-textarea">
+              <textarea
+                formControlName="message"
+                id="text-area-message"
+                placeholder="Write here"
+              ></textarea>
+              <p class="text-[12px]">max 400 characters</p>
+            </div>
+          </fieldset>
+
+        </form>
+
+      </div>
+      <div class="bottom">
+        <button
+          class="button button-step"
+          (click)="sendForm( 'messageForm')"
+        >Send Message</button>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <!-- TAB: MEET -->
+  <ng-container *ngIf="generalService.tab==='meet'">
+
+    <!-- MEET: STEP 1 -->
+    <div *ngIf="currentStep===1" class="step step-1">
+      <div class="top">
+      </div>
+      <div class="main">
+
+        <form action="" [formGroup]="meetFormControlStep1">
+          <legend>Schedule a Meeting</legend>
+
+          <fieldset class="bordered flex flex-row flex-wrap mb-[40px]">
+            <p class="w-[100%] mb-[15px]"><b>Pick the time of day the best works for you</b> (up to 2)*</p>
+            <div class="input-group w-[33%]">
+              <input
+                id="call-morning"
+                formControlName="callMorning"
+                type="checkbox"
+                class=" custom-checkbox"
+                (change)="updateCheckboxSelection('callMorning')"
+              />
+              <label for="call-morning">Morning</label>
+            </div>
+
+            <div class="input-group w-[33%]">
+              <input
+                id="call-afternoon"
+                formControlName="callAfternoon"
+                type="checkbox"
+                class=" custom-checkbox"
+                (change)="updateCheckboxSelection('callAfternoon')"
+              />
+              <label for="call-afternoon">Afternoon</label>
+            </div>
+
+            <div class="input-group w-[33%]">
+              <input
+                id="call-evening"
+                formControlName="callEvening"
+                type="checkbox"
+                class=" custom-checkbox"
+                (change)="updateCheckboxSelection('callEvening')"
+                />
+                <!-- [disabled]="selectedCheckboxes >= 2" -->
+              <label for="call-evening">Evening</label>
+            </div>
+
+            <div *ngIf="meetFormControlStep1.hasError('tooManySelected')">
+              <span class="text-red-600 text-[14px]">You can only select a maximum of two checkboxes in the Call Form.</span>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="bordered">
+              <p class="mb-[10px]">Pick 2-3 days that would be best</p>
+
+              <div class="input-group">
+                <!-- <app-datepicker [onDateSelect]="onDateSelect" [preSelectedDates]="formSelectedDatesMeet"></app-datepicker> -->
+              </div>
+
+          </fieldset>
+
+        </form>
+
+      </div>
+      <div class="bottom">
+        <button
+          class="button button-step"
+          (click)="changeStep(2)"
+        >Next</button>
+      </div>
+    </div>
+
+     <!-- MEET: STEP 2 -->
+     <div *ngIf="currentStep===2" class="step step-2">
+      <div class="top">
+        <button class="step-back-button" (click)="changeStep(1)">Back</button>
+
+        <form class="form-contact-info" [formGroup]="meetFormControlStep2" action="">
+
+          <legend>Schedule a Meeting</legend>
+
+          <div class="hightlighed mb-[20px]">
+            <div class="results">
+              <p>You've selected:</p>
+              <span class="notification" *ngIf="this.meetFormControlStep1.value.selectedDates.length === 0">Nothing selected</span>
+              <div class="results-row" *ngFor="let date of this.meetFormControlStep1.value.selectedDates">
+                <span class="date">{{ this.pipe.transform(date, 'EEEE, MMMM d, y') }}
+                  {{ this.meetFormControlStep1.value.callMorning ? ', Morning' : null }}
+                  {{ this.meetFormControlStep1.value.callAfternoon ? ', Afternoon' : null }}
+                  {{ this.meetFormControlStep1.value.callEvening ? ', Evening' : null }}
+                </span>
+              </div>
+              <button class="step-back-button" (click)="changeStep(1)">Edit</button>
+            </div>
+          </div>
+
+          <fieldset class="mb-[20px]">
+            <legend>Fill out your contact info</legend>
+
+            <span class="text-[15px] mb-[10px]"><b>Name*</b></span>
+            <input
+              id="first-name"
+              formControlName="firstName"
+              type="text"
+              class="input-text mb-[10px]"
+              placeholder="First Name"
+            />
+            <input
+              id="last-name"
+              formControlName="lastName"
+              type="text"
+              class="input-text"
+              placeholder="Last Name"
+            />
+
+            <span class="text-[15px] mt-[15px] mb-[10px]"><b>Email*</b></span>
+            <input
+            id="email"
+            formControlName="email"
+            type="email"
+            class="input-text full"
+            placeholder="Email"
+            />
+
+            <span class="text-[15px] mt-[15px] mb-[10px]"><b>Phone*</b></span>
+            <input
+              id="phone"
+              formControlName="phone"
+              type="text"
+              class="input-text"
+              placeholder="Phone"
+            />
+          </fieldset>
+
+          <fieldset class="flex flex-row flex-wrap mb-[20px]">
+            <p class="text-[15px] mb-[20px] w-[100%]">I prefer to be contacted by:</p>
+            <div class="input-group w-[33%]">
+              <input
+                id="contact-method-texting"
+                formControlName="contactMethodTexting"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="contact-method-texting">Texting</label>
+            </div>
+            <div class="input-group w-[33%]">
+              <input
+                id="contact-method-email"
+                formControlName="contactMethodEmail"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="contact-method-email">Email</label>
+            </div>
+            <div class="input-group w-[33%]">
+              <input
+                id="contact-method-phone"
+                formControlName="contactMethodPhone"
+                type="checkbox"
+                class="custom-checkbox"
+              />
+              <label for="contact-method-phone">Phone</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <span class="text-[15px] mt-[15px] mb-[10px]"><b>Message</b></span>
+            <div class="input-group-textarea">
+              <textarea
+                formControlName="message"
+                id="text-area-message"
+                placeholder="Write here"
+              ></textarea>
+              <p class="text-[12px]">max 400 characters</p>
+            </div>
+          </fieldset>
+
+        </form>
+
+      </div>
+
+      <div class="main">
+        </div>
+      <div class="bottom">
+        <button
+          class="button button-step"
+          (click)="sendForm( 'meetForm' )"
+        >Send meeting request</button>
+      </div>
+    </div>
+
+  </ng-container>
+
+</div>

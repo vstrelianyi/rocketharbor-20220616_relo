@@ -15,7 +15,7 @@ import { SmartSearchMapComponent } from './smart-search-map/smart-search-map.com
 import { NgSelectModule } from '@ng-select/ng-select';
 import { WhyChicagolandComponent } from './why-chicagoland/why-chicagoland.component';
 import { ModalComponent } from './modal/modal.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent } from './tabs-updated/tabs.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
