@@ -30,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
 
-import { DpDatePickerModule } from 'ng2-date-picker';
+// import { DpDatePickerModule } from 'ng2-date-picker';
 import { TableComponent } from './table/table.component';
 
 import { SwiperModule } from 'swiper/angular';
@@ -41,6 +41,9 @@ import { GoogleMapsModule } from "@angular/google-maps";
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './chart/chart.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgxMultipleDatesModule } from 'ngx-multiple-dates';
 
 @NgModule( {
   imports: [
@@ -53,8 +56,10 @@ import { ChartComponent } from './chart/chart.component';
     FormsModule,
     ReactiveFormsModule,
 
-    DpDatePickerModule,
-    // MatDatepickerModule,
+    // DpDatePickerModule,
+
+    MatDatepickerModule,
+    NgxMultipleDatesModule,
     // MatInputModule,
     // MatFormFieldModule,
     // MatNativeDateModule,
@@ -88,6 +93,8 @@ import { ChartComponent } from './chart/chart.component';
 		GoogleMapsComponent,
     ChartComponent,
     // SliderComponent,
+
+    DatepickerComponent
   ],
   providers: [
     // MatDatepickerModule,

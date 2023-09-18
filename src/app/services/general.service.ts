@@ -8,5 +8,7 @@ export class GeneralService {
   showModal = false;
   tab: string | null = null;
   tabSchool: string | null = null;
+  selectedDates: Date[] = [];
+
   constructor() { }
 }

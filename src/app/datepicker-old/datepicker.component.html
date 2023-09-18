@@ -1,5 +1,4 @@
 <div class="wrapper-mat-calendar">
-
   <ngx-multiple-dates
     [matDatepicker]="picker"
     placeholder="Selected Dates"
@@ -7,13 +6,10 @@
     [(ngModel)]="selectedDates"
     (dateChange)="onDateChange($event)"
   ></ngx-multiple-dates>
-
   <mat-calendar
     #picker
     class="custom-mat-calendar"
-    (selected)="selectedDates"
-    [dateClass]="dateClassMethod()"
+    [selected]="selectedDates"
   ></mat-calendar>
-
 </div>
 

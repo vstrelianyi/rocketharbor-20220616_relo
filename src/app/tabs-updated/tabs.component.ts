@@ -13,7 +13,12 @@ import { IDatePickerConfig } from 'ng2-date-picker';
 })
 
 export class TabsComponent implements OnInit {
-  tabList = [ 'call', 'message', 'meet']
+  constructor( public generalService: GeneralService ) {
+    this.onDateSelect = this.onDateSelect.bind(this);
+  }
+
+  tabList = [ 'call', 'message', 'meet'];
+  formSelectedDatesCall: Date[] = [];
 
   isAccordionOpened: any = false;
   currentStep: number = 1;
@@ -114,9 +119,6 @@ export class TabsComponent implements OnInit {
     ownershipRent: new FormControl( false, [] ),
   } );
 
-
-  constructor( public generalService: GeneralService ) {}
-
   ngOnInit(): void {
     // this.generalService.tab='call;
     // this.callMorning.valueChanges.subscribe( value=> console.log(value))
@@ -154,6 +156,24 @@ export class TabsComponent implements OnInit {
       default:
         break;
     }
+
+  }
+
+  onDateSelect( dates: Date[] ){
+    // console.log( 'Form selectedDates', dates );
+
+    this.callFormControlStep1.patchValue({
+      selectedDates: dates // Assuming you have date values here
+    });
+
+    this.meetFormControlStep1.patchValue({
+      selectedDates: dates // Assuming you have date values here
+    });
+
+    this.generalService.selectedDates = dates;
+
+    // const formattedDate = this.pipe.transform(  this.callFormControlStep1.get('selectedDates').value, 'yyyy-MM-dd');
+    // console.log(formattedDate);
 
   }
 

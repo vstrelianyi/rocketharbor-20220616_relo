@@ -88,12 +88,14 @@
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field> -->
 
-              <!-- <dp-date-picker
-                class="input-date-picker"
-                formControlName="selectedDates"
-                [config]="datePickerConfig"
-                (onSelect)="onSelect( $event )"
-              ></dp-date-picker> -->
+                <!-- <dp-date-picker
+                  class="input-date-picker"
+                  formControlName="selectedDates"
+                  [config]="datePickerConfig"
+                  (onSelect)="onSelect( $event )"
+                ></dp-date-picker> -->
+
+                <app-datepicker [onDateSelect]="onDateSelect" [preSelectedDates]="formSelectedDatesCall"></app-datepicker>
 
               </div>
 
@@ -697,6 +699,8 @@
                   [config]="datePickerConfig"
                   (onSelect)="onSelect( $event )"
                 ></dp-date-picker> -->
+
+                <!-- <app-datepicker [onDateSelect]="onDateSelect" [preSelectedDates]="formSelectedDatesCall"></app-datepicker> -->
 
               </div>
 
