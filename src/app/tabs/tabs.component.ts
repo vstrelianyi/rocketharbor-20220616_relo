@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { GeneralService } from '../services/general.service';
 import { DatePipe } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { IDatePickerConfig } from 'ng2-date-picker';
 // import { DateRemoveEvent } from 'ngx-multiple-dates';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tabs',
@@ -13,19 +13,22 @@ import { IDatePickerConfig } from 'ng2-date-picker';
 })
 
 export class TabsComponent implements OnInit {
+  private subscription: Subscription;
   tabList = [ 'call', 'message', 'meet'];
 
   isAccordionOpened: any = false;
   currentStep: number = 1;
 
   formSelectedDatesCall: Date[] = [];
+  formSelectedDatesMeet: Date[] = [];
+
+  callFormControlStep1: FormGroup;
+  callFormControlStep2: FormGroup;
+  messageFormControlStep1: FormGroup;
+  meetFormControlStep1: FormGroup;
+  meetFormControlStep2: FormGroup;
 
   pipe = new DatePipe('en-US');
-  datePickerConfig: IDatePickerConfig = {
-    allowMultiSelect: true,
-    drops: 'up',
-    firstDayOfWeek: 'mo'
-  };
 
   // FORMS
   // callMorning: FormControl = new FormControl( false, [] ); // [ formValidator ]
@@ -33,89 +36,90 @@ export class TabsComponent implements OnInit {
   // callEvening: FormControl = new FormControl( false, [] );
 
   // CALL FORM
-  callFormControlStep1: FormGroup =  new FormGroup( {
-    callMorning: new FormControl( false, [] ),
-    callAfternoon: new FormControl( false, [] ),
-    callEvening: new FormControl( false, [] ),
-    selectedDates: new FormControl( [], [] )
-  } );
+  initForms() {
+    callFormControlStep1: FormGroup =  new FormGroup( {
+      callMorning: new FormControl( false, [] ),
+      callAfternoon: new FormControl( false, [] ),
+      callEvening: new FormControl( false, [] ),
+      selectedDates: new FormControl( [], [] )
+    } );
 
-  callFormControlStep2: FormGroup =  new FormGroup( {
-    firstName: new FormControl( null, [] ),
-    lastName: new FormControl( null, [] ),
-    email: new FormControl( null, [] ),
-    phone: new FormControl( null, [] ),
-    message: new FormControl( null, [] ),
-    neighborhood1: new FormControl( null, [] ),
-    neighborhood2: new FormControl( null, [] ),
-    neighborhood3: new FormControl( null, [] ),
-    neighborhood4: new FormControl( null, [] ),
-    neighborhood5: new FormControl( null, [] ),
-    priceRangeMin: new FormControl( null, [] ),
-    priceRangeMax: new FormControl( null, [] ),
-    moveDates: new FormControl( [], [] ),
-    homeStyleSingleFamily: new FormControl( false, [] ),
-    homeStyleTownhome: new FormControl( false, [] ),
-    homeStyleCondo: new FormControl( false, [] ),
-    ownershipOwn: new FormControl( false, [] ),
-    ownershipRent: new FormControl( false, [] ),
-  } );
+    callFormControlStep2: FormGroup =  new FormGroup( {
+      firstName: new FormControl( null, [] ),
+      lastName: new FormControl( null, [] ),
+      email: new FormControl( null, [] ),
+      phone: new FormControl( null, [] ),
+      message: new FormControl( null, [] ),
+      neighborhood1: new FormControl( null, [] ),
+      neighborhood2: new FormControl( null, [] ),
+      neighborhood3: new FormControl( null, [] ),
+      neighborhood4: new FormControl( null, [] ),
+      neighborhood5: new FormControl( null, [] ),
+      priceRangeMin: new FormControl( null, [] ),
+      priceRangeMax: new FormControl( null, [] ),
+      moveDates: new FormControl( [], [] ),
+      homeStyleSingleFamily: new FormControl( false, [] ),
+      homeStyleTownhome: new FormControl( false, [] ),
+      homeStyleCondo: new FormControl( false, [] ),
+      ownershipOwn: new FormControl( false, [] ),
+      ownershipRent: new FormControl( false, [] ),
+    } );
 
-  // MESSAGE FORM
-  messageFormControlStep1: FormGroup =  new FormGroup( {
-    firstName: new FormControl( null, [] ),
-    lastName: new FormControl( null, [] ),
-    email: new FormControl( null, [] ),
-    phone: new FormControl( null, [] ),
-    contactMethodTexting: new FormControl( null, [] ),
-    contactMethodEmail: new FormControl( null, [] ),
-    message: new FormControl( null, [] ),
-    neighborhood1: new FormControl( null, [] ),
-    neighborhood2: new FormControl( null, [] ),
-    neighborhood3: new FormControl( null, [] ),
-    neighborhood4: new FormControl( null, [] ),
-    neighborhood5: new FormControl( null, [] ),
-    priceRangeMin: new FormControl( null, [] ),
-    priceRangeMax: new FormControl( null, [] ),
-    moveDates: new FormControl( [], [] ),
-    homeStyleSingleFamily: new FormControl( false, [] ),
-    homeStyleTownhome: new FormControl( false, [] ),
-    homeStyleCondo: new FormControl( false, [] ),
-    ownershipOwn: new FormControl( false, [] ),
-    ownershipRent: new FormControl( false, [] ),
-  } );
+    // MESSAGE FORM
+    messageFormControlStep1: FormGroup =  new FormGroup( {
+      firstName: new FormControl( null, [] ),
+      lastName: new FormControl( null, [] ),
+      email: new FormControl( null, [] ),
+      phone: new FormControl( null, [] ),
+      contactMethodTexting: new FormControl( null, [] ),
+      contactMethodEmail: new FormControl( null, [] ),
+      message: new FormControl( null, [] ),
+      neighborhood1: new FormControl( null, [] ),
+      neighborhood2: new FormControl( null, [] ),
+      neighborhood3: new FormControl( null, [] ),
+      neighborhood4: new FormControl( null, [] ),
+      neighborhood5: new FormControl( null, [] ),
+      priceRangeMin: new FormControl( null, [] ),
+      priceRangeMax: new FormControl( null, [] ),
+      moveDates: new FormControl( [], [] ),
+      homeStyleSingleFamily: new FormControl( false, [] ),
+      homeStyleTownhome: new FormControl( false, [] ),
+      homeStyleCondo: new FormControl( false, [] ),
+      ownershipOwn: new FormControl( false, [] ),
+      ownershipRent: new FormControl( false, [] ),
+    } );
 
-  // MEET FORM
-  meetFormControlStep1: FormGroup =  new FormGroup( {
-    callMorning: new FormControl( false, [] ),
-    callAfternoon: new FormControl( false, [] ),
-    callEvening: new FormControl( false, [] ),
-    selectedDates: new FormControl( [], [] )
-  } );
+    // MEET FORM
+    meetFormControlStep1: FormGroup =  new FormGroup( {
+      callMorning: new FormControl( false, [] ),
+      callAfternoon: new FormControl( false, [] ),
+      callEvening: new FormControl( false, [] ),
+      selectedDates: new FormControl( [], [] )
+    } );
 
-  meetFormControlStep2: FormGroup =  new FormGroup( {
-    firstName: new FormControl( null, [] ),
-    lastName: new FormControl( null, [] ),
-    email: new FormControl( null, [] ),
-    phone: new FormControl( null, [] ),
-    contactMethodTexting: new FormControl( null, [] ),
-    contactMethodEmail: new FormControl( null, [] ),
-    message: new FormControl( null, [] ),
-    neighborhood1: new FormControl( null, [] ),
-    neighborhood2: new FormControl( null, [] ),
-    neighborhood3: new FormControl( null, [] ),
-    neighborhood4: new FormControl( null, [] ),
-    neighborhood5: new FormControl( null, [] ),
-    priceRangeMin: new FormControl( null, [] ),
-    priceRangeMax: new FormControl( null, [] ),
-    moveDates: new FormControl( [], [] ),
-    homeStyleSingleFamily: new FormControl( false, [] ),
-    homeStyleTownhome: new FormControl( false, [] ),
-    homeStyleCondo: new FormControl( false, [] ),
-    ownershipOwn: new FormControl( false, [] ),
-    ownershipRent: new FormControl( false, [] ),
-  } );
-
+    meetFormControlStep2: FormGroup =  new FormGroup( {
+      firstName: new FormControl( null, [] ),
+      lastName: new FormControl( null, [] ),
+      email: new FormControl( null, [] ),
+      phone: new FormControl( null, [] ),
+      contactMethodTexting: new FormControl( null, [] ),
+      contactMethodEmail: new FormControl( null, [] ),
+      message: new FormControl( null, [] ),
+      neighborhood1: new FormControl( null, [] ),
+      neighborhood2: new FormControl( null, [] ),
+      neighborhood3: new FormControl( null, [] ),
+      neighborhood4: new FormControl( null, [] ),
+      neighborhood5: new FormControl( null, [] ),
+      priceRangeMin: new FormControl( null, [] ),
+      priceRangeMax: new FormControl( null, [] ),
+      moveDates: new FormControl( [], [] ),
+      homeStyleSingleFamily: new FormControl( false, [] ),
+      homeStyleTownhome: new FormControl( false, [] ),
+      homeStyleCondo: new FormControl( false, [] ),
+      ownershipOwn: new FormControl( false, [] ),
+      ownershipRent: new FormControl( false, [] ),
+    } );
+  }
 
   constructor( public generalService: GeneralService ) {}
 
@@ -126,6 +130,18 @@ export class TabsComponent implements OnInit {
     // this.callFormControl.valueChanges.subscribe( value => {
     //   console.log(this.callFormControl.value)
     // })
+
+    this.initForms();
+
+    this.subscription = this.generalService.triggerMethod.subscribe(() => {
+      // console.log('Modal closed event');
+      this.generalService.selectedDates = [];
+      this.clearForm();
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   selectTab(tab:any):void{
@@ -164,6 +180,14 @@ export class TabsComponent implements OnInit {
     // const datesLength = this.callFormControlStep1.value.selectedDates.length;
     // if( datesLength > 2){
     // }
+  }
+
+  clearForm(): void {
+    this.callFormControlStep1.reset();
+    this.callFormControlStep2.reset();
+    this.messageFormControlStep1.reset();
+    this.meetFormControlStep1.reset();
+    this.meetFormControlStep2.reset();
   }
 
   // dateChanged($event:any):void{

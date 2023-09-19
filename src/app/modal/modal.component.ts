@@ -14,5 +14,6 @@ export class ModalComponent implements OnInit {
 
   closeModal(): void{
     this.generalService.showModal = false;
+    this.generalService.callMethod();
   }
 }
