@@ -24,11 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // MATERIAL DESIGN
 // import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatInputModule } from '@angular/material/input';
 // import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatNativeDateModule } from '@angular/material/core';
 
-// import { NgxMultipleDatesModule, } from 'ngx-multiple-dates';
 
 // import { DpDatePickerModule } from 'ng2-date-picker';
 import { TableComponent } from './table/table.component';
@@ -41,6 +38,9 @@ import { GoogleMapsModule } from "@angular/google-maps";
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './chart/chart.component';
+
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgxMultipleDatesModule } from 'ngx-multiple-dates';
@@ -61,8 +61,8 @@ import { NgxMultipleDatesModule } from 'ngx-multiple-dates';
     MatDatepickerModule,
     NgxMultipleDatesModule,
     // MatInputModule,
+    MatNativeDateModule,
     // MatFormFieldModule,
-    // MatNativeDateModule,
     // NgxMultipleDatesModule
 
     SwiperModule,

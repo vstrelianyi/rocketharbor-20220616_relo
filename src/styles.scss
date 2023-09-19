@@ -14,13 +14,18 @@
 @import './styles/form';
 @import './styles/custom-scrollbar-css';
 
+@import './styles/calendar';
+
 // material components
 // @import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
 // @import './styles/mat-datepicker';
 
 // @import '~@angular/cdk/overlay-prebuilt.css';
 
-@import './styles/ng2-date-picker.scss';
+// @import './styles/ng2-date-picker.scss';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
 
 // layout
 @import './styles/section';

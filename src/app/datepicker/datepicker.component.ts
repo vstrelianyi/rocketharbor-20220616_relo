@@ -12,7 +12,6 @@ import { GeneralService } from '../services/general.service';
   styleUrls: ['./datepicker.component.scss']
 })
 export class DatepickerComponent implements OnInit {
-
   @Input() onDateSelect: ( $event: any ) => void;
   @Input() preSelectedDates: Date[];
   @ViewChild('picker') picker: MatCalendar<Date>;
